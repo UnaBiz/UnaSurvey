@@ -41,7 +41,7 @@ Object.keys(allUnaBells).forEach(tag => {
         console.error(error.message, error.stack);
         return error;
       }
-      console.log({ data });
+      console.log(tag, unabellID, { data });
     });
 
     /* client.thingRead('temperature', {limit:1}, function (error, data) {
