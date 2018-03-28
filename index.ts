@@ -32,10 +32,10 @@ Object.keys(allUnaBells).forEach(tag => {
   });
 
   client.on('ready', function() {
-    const obj = { values: [{
-      key: 'test',
-      value: tag,
-    }]};
+    const obj = { values: [
+      { key: 'status', value: 'button_pressed' },
+      { key: 'tag', value: tag },
+    ]};
     client.thingWrite(obj, function (error, data) {
       if (error) {
         console.error(error.message, error.stack);
@@ -54,16 +54,15 @@ Object.keys(allUnaBells).forEach(tag => {
   });
 });
 
+/*
 const obj = {
-  "values":
+"values":
     [{
-      "key": "status",
-      "value" : "button_pressed",
-      /*
-      "geo" : {
-        "lat" : 41.4121132,
-        "long" : 2.2199454
-      }
-      */
-    }]
+    "key": "status",
+    "value" : "button_pressed",
+    "geo" : {
+      "lat" : 41.4121132,
+      "long" : 2.2199454
+    }}]
 };
+*/
