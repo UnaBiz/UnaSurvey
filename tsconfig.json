@@ -1,0 +1,18 @@
+{
+  "compilerOptions": {
+    "target": "ES2016",
+    "module": "commonjs",
+    "moduleResolution": "node",
+    "alwaysStrict": true,
+    "sourceMap": true,
+    "jsx": "react",
+    "allowJs": false,
+    "noImplicitAny": false,
+    "strictNullChecks": false,
+    "lib": [ "es2015", "es2017" ],
+    "newLine": "LF"
+  },
+  "exclude": [
+    "node_modules"
+  ]
+}

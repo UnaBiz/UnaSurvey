@@ -1,0 +1,8 @@
+{
+  "name": "UnaSurvey",
+  "version": "0.0.1",
+  "dependencies": {
+    "@types/node": "^9.6.0",
+    "thethingsio-api": "^0.1.1"
+  }
+}
