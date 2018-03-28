@@ -1,15 +1,16 @@
 "use strict";
+//  We will have 4 UnaBells placed side by side to provide 4 buttons for survey:
+//  4D9A51: Excellent
+//  4DA240: Good Job
+//  4D9F7C: Fair
+//  4DA0B6: Poor
 Object.defineProperty(exports, "__esModule", { value: true });
 const theThingsAPI = require("thethingsio-api");
 const client = theThingsAPI.createSecureClient();
 const obj = {
     "values": [{
-            "key": "temperature",
-            "value": 23,
-            "geo": {
-                "lat": 41.4121132,
-                "long": 2.2199454
-            }
+            "key": "status",
+            "value": "button_pressed",
         }]
 };
 client.on('error', function (error) {
