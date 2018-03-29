@@ -45,7 +45,7 @@ export function sendStatus(unabellID0: string): Promise<any> {
   };
   //  Send the data.
   return new Promise((resolve, reject) =>
-    client.thingWrite(obj, (error, data) =>
+    (client as any).thingWrite(obj, (error, data) =>
       error ? reject(error) : resolve(data))
   )
     .then(result => {

@@ -1,3 +1,4 @@
+"use strict";
 /* When the UnaBell is pressed, we trigger this function to increment the survey response
    counters: Excellent, Good, etc.  Pressing the UnaBell creates a "write" action with
    key=status, value=button_pressed
@@ -13,8 +14,22 @@
    callback: is a function to be called when the trigger ends can contain a
        parameter string *error* if the trigger needs to report an error.
 */
-
-function trigger(params, callback){
-  console.log("Hello world!");
-  callback();
+function trigger(params, callback) {
+    /* params contains
+    "thingToken": "xxx",
+    "values": [
+      {"key": "status", "value": "button_pressed", "geo": {"lat": 1, "long": 104}},
+      {"key": "tag", "value": "excellent"}
+    ],
+    "action": "write" */
+    console.log(new Date().toISOString(), params);
+    const event = { name: "button_pressed", value: "excellent" };
+    analytics.events.create(event);
+    const name = "Excellent Count";
+    const value = 123;
+    const tags = ["tag1"];
+    analytics.kpis.create(name, value, tags);
+    console.log(new Date().toISOString(), "Done", params);
+    callback();
 }
+//# sourceMappingURL=update_response_counters.js.map
