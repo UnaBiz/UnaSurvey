@@ -10,13 +10,15 @@
 //  unabell_4d9f7c: Fair
 //  unabell_4da0b6: Poor
 //  Each file contains: {"thingToken" : "..."}
+//  Or insert the token inline here:
 
 const allUnaBells = {
-  excellent: 'unabell_4d9a51',
-  goodjob: 'unabell_4da240',
-  fair: 'unabell_4d9f7c',
-  poor: 'unabell_4da0b6',
+  excellent: { id: 'unabell_4d9a51', token: null },
+  goodjob: { id: 'unabell_4da240', token: null },
+  fair: { id: 'unabell_4d9f7c', token: null },
+  poor: { id: 'unabell_4da0b6', token: null },
 };
+
 const allClientsByTag: {[tag: string]: object} = {};  //  Maps tag to the thethings client
 const allClientsByID: {[unabellID: string]: object} = {};  //  Maps UnaBell ID to the thethings client
 const allTagsByID: {[unabellID: string]: string} = {};  //  Maps UnaBell ID to the tag
@@ -58,39 +60,32 @@ export function sendStatus(unabellID0: string): Promise<any> {
 
 Object.keys(allUnaBells).forEach(tag => {
   //  Upon startup, open a connection for each UnaBell.
-  const unabellID = allUnaBells[tag];
-  const configFile = unabellID + '.json';
-  const client = theThingsAPI.createSecureClient(configFile);
-  allTagsByID[unabellID] = tag;
+  const { id, token } = allUnaBells[tag];
+  allTagsByID[id] = tag;
+  const configFile = id + '.json';
+  //  Use the token if provided. Else use the config file.
+  const config = token
+    ? { thingToken: token }
+    : configFile;
+  //  Connect to thethings.io.
+  const client = theThingsAPI.createSecureClient(config);
 
   client.on('error',function(error){
-    console.error(unabellID, tag, error.message, error.stack);
+    //  Show a message on error.
+    console.error(id, tag, error.message, error.stack);
   });
 
   client.on('ready', function() {
     //  Upon connecting, save the connection so we can send data later.
     allClientsByTag[tag] = client;
-    allClientsByID[unabellID] = client;
+    allClientsByID[id] = client;
 
     //  For development: Send the test status upon connection.
     if (process.env.NODE_ENV !== 'production') {
-      sendStatus(unabellID);
+      sendStatus(id);
     }
   });
 });
-
-/*
-const obj = {
-"values":
-    [{
-    "key": "status",
-    "value" : "button_pressed",
-    "geo" : {
-      "lat" : 41.4121132,
-      "long" : 2.2199454
-    }}]
-};
-*/
 
 /* client.thingRead('temperature', {limit:1}, function (error, data) {
   if (error) {

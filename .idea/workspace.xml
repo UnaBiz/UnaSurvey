@@ -38,10 +38,25 @@
       <file leaf-file-name="index.ts" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/index.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="860">
-              <caret line="43" column="20" lean-forward="false" selection-start-line="43" selection-start-column="20" selection-end-line="43" selection-end-column="20" />
+            <state relative-caret-position="400">
+              <caret line="20" column="0" lean-forward="true" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
               <folding>
                 <element signature="n#!!doc" expanded="true" />
+                <element signature="n#!!block;n#sendStatus#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/index.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="580">
+              <caret line="30" column="20" lean-forward="true" selection-start-line="30" selection-start-column="20" selection-end-line="30" selection-end-column="20" />
+              <folding>
+                <marker date="1522297443000" expanded="true" signature="2190:2454" ph="{...}" />
+                <marker date="1522297443000" expanded="true" signature="3097:3099" ph="/*...*/" />
+                <marker date="1522297443000" expanded="true" signature="3099:3283" ph="/*...*/" />
               </folding>
             </state>
           </provider>
@@ -74,8 +89,8 @@
       <file leaf-file-name="unabell_4da0b6.json" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/unabell_4da0b6.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="60">
-              <caret line="3" column="0" lean-forward="false" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
+            <state relative-caret-position="20">
+              <caret line="1" column="61" lean-forward="true" selection-start-line="1" selection-start-column="18" selection-end-line="1" selection-end-column="61" />
               <folding />
             </state>
           </provider>
@@ -85,7 +100,7 @@
         <entry file="file://$PROJECT_DIR$/unabell_4da240.json">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="60">
-              <caret line="3" column="0" lean-forward="false" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
+              <caret line="3" column="0" lean-forward="true" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -94,8 +109,8 @@
       <file leaf-file-name="unabell_4d9f7c.json" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/unabell_4d9f7c.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="60">
-              <caret line="3" column="0" lean-forward="false" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
+            <state relative-caret-position="20">
+              <caret line="1" column="61" lean-forward="false" selection-start-line="1" selection-start-column="18" selection-end-line="1" selection-end-column="61" />
               <folding />
             </state>
           </provider>
@@ -111,21 +126,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="http-client.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/node_modules/thethingsio-api/http-client.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name=".gitignore" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/.gitignore">
+      <file leaf-file-name="unabell_4d9a51.json" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/unabell_4d9a51.json">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="60">
-              <caret line="3" column="0" lean-forward="false" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
+              <caret line="3" column="0" lean-forward="true" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -183,8 +188,8 @@
     <handled-path value="$PROJECT_DIR$/node_modules" />
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="740" />
-    <option name="y" value="-1558" />
+    <option name="x" value="852" />
+    <option name="y" value="-1488" />
     <option name="width" value="1785" />
     <option name="height" value="1383" />
   </component>
@@ -228,6 +233,22 @@
             <path>
               <item name="UnaSurvey" type="b2602c69:ProjectViewProjectNode" />
               <item name="UnaSurvey" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="UnaSurvey" type="b2602c69:ProjectViewProjectNode" />
+              <item name="UnaSurvey" type="462c0819:PsiDirectoryNode" />
+              <item name="node_modules" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="UnaSurvey" type="b2602c69:ProjectViewProjectNode" />
+              <item name="UnaSurvey" type="462c0819:PsiDirectoryNode" />
+              <item name="node_modules" type="462c0819:PsiDirectoryNode" />
+              <item name="thethingsio-api" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="UnaSurvey" type="b2602c69:ProjectViewProjectNode" />
+              <item name="UnaSurvey" type="462c0819:PsiDirectoryNode" />
+              <item name="index.ts" type="620a8d5e:NestingTreeNode" />
             </path>
           </expand>
           <select />
@@ -282,7 +303,7 @@
       <workItem from="1522220677969" duration="1128000" />
       <workItem from="1522222038773" duration="4492000" />
       <workItem from="1522290397774" duration="15000" />
-      <workItem from="1522293017068" duration="2812000" />
+      <workItem from="1522293017068" duration="4091000" />
     </task>
     <task id="LOCAL-00001" summary="First version">
       <created>1522222114649</created>
@@ -347,14 +368,21 @@
       <option name="project" value="LOCAL" />
       <updated>1522295037328</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="Converted to promises">
+      <created>1522296192712</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1522296192712</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="8447000" />
+    <option name="totallyTimeSpent" value="9726000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="740" y="-1558" width="1785" height="1383" extended-state="0" />
+    <frame x="852" y="-1488" width="1785" height="1383" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="TypeScript" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32912534" sideWeight="0.5" order="19" side_tool="false" content_ui="tabs" />
@@ -420,7 +448,8 @@
     <MESSAGE value="Send data for 4 UnaBells to thethings.io OK" />
     <MESSAGE value="Added cloud code" />
     <MESSAGE value="Integrating with unabell backend" />
-    <option name="LAST_COMMIT_MESSAGE" value="Integrating with unabell backend" />
+    <MESSAGE value="Converted to promises" />
+    <option name="LAST_COMMIT_MESSAGE" value="Converted to promises" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -450,6 +479,7 @@
           <caret line="43" column="0" lean-forward="false" selection-start-line="43" selection-start-column="0" selection-end-line="43" selection-end-column="0" />
           <folding>
             <element signature="n#!!doc" expanded="true" />
+            <element signature="n#!!block;n#sendStatus#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -536,6 +566,7 @@
           <caret line="43" column="0" lean-forward="false" selection-start-line="43" selection-start-column="0" selection-end-line="43" selection-end-column="0" />
           <folding>
             <element signature="n#!!doc" expanded="true" />
+            <element signature="n#!!block;n#sendStatus#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -622,6 +653,7 @@
           <caret line="9" column="0" lean-forward="true" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
           <folding>
             <element signature="n#!!doc" expanded="true" />
+            <element signature="n#!!block;n#sendStatus#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -650,14 +682,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/node_modules/thethingsio-api/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="60">
@@ -667,37 +691,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/config.json" />
-    <entry file="file://$PROJECT_DIR$/unabell_4da0b6.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="3" column="0" lean-forward="false" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/unabell_4d9a51.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="3" column="0" lean-forward="true" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/unabell_4d9f7c.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="3" column="0" lean-forward="false" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/unabell_4da240.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="3" column="0" lean-forward="false" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/update_response_counters.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="400">
@@ -726,12 +719,65 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/thethingsio-api/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/unabell_4d9f7c.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="20">
+          <caret line="1" column="61" lean-forward="false" selection-start-line="1" selection-start-column="18" selection-end-line="1" selection-end-column="61" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/unabell_4da240.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="3" column="0" lean-forward="true" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/unabell_4d9a51.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="3" column="0" lean-forward="true" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="580">
+          <caret line="30" column="20" lean-forward="true" selection-start-line="30" selection-start-column="20" selection-end-line="30" selection-end-column="20" />
+          <folding>
+            <marker date="1522297443000" expanded="true" signature="2190:2454" ph="{...}" />
+            <marker date="1522297443000" expanded="true" signature="3097:3099" ph="/*...*/" />
+            <marker date="1522297443000" expanded="true" signature="3099:3283" ph="/*...*/" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/unabell_4da0b6.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="20">
+          <caret line="1" column="61" lean-forward="true" selection-start-line="1" selection-start-column="18" selection-end-line="1" selection-end-column="61" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/index.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="860">
-          <caret line="43" column="20" lean-forward="false" selection-start-line="43" selection-start-column="20" selection-end-line="43" selection-end-column="20" />
+        <state relative-caret-position="400">
+          <caret line="20" column="0" lean-forward="true" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
           <folding>
             <element signature="n#!!doc" expanded="true" />
+            <element signature="n#!!block;n#sendStatus#0" expanded="false" />
           </folding>
         </state>
       </provider>
