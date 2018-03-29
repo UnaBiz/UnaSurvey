@@ -25,10 +25,15 @@ function trigger(params: TriggerParams, callback: ()=>void) {
   console.log(new Date().toISOString(), analytics, { trigger: params });
   const event = { name: "button_pressed", value: "excellent" };
   analytics.events.create(event);
-  const name = "Excellent Count";
-  const value = 123;
-  const tags = ["tag1"];
-  analytics.kpis.create(name, value, tags);
+  if (!analytics.kpis) {
+    //  KPIs are missing when things are first created.  Need to run the batch job to create the KPI.
+    console.error('Missing KPI module. Run the batch job and create the KPI first', params);
+  } else {
+    const name = "Excellent Count";
+    const value = 123;
+    const tags = ["tag1"];
+    analytics.kpis.create(name, value, tags);
+  }
   console.log(new Date().toISOString(), "Done", { trigger: params });
   callback();
 }
