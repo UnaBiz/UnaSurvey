@@ -17,35 +17,41 @@ const allUnaBells = {
     fair: 'unabell_4d9f7c',
     poor: 'unabell_4da0b6',
 };
-const allClients = {};
+const allClientsByTag = {};
+const allClientsByID = {};
 const theThingsAPI = require("thethingsio-api");
+function sendStatus(client, unabellID, tag) {
+    //  Send the UnaBell status to thethings cloud.
+    const obj = {
+        values: [
+            { key: 'status', value: 'button_pressed', geo: { lat: 1, long: 104 } },
+            { key: 'tag', value: tag },
+        ]
+    };
+    client.thingWrite(obj, function (error, data) {
+        if (error) {
+            console.error(unabellID, tag, error.message, error.stack);
+            return error;
+        }
+        console.log(unabellID, tag, { data });
+    });
+}
 Object.keys(allUnaBells).forEach(tag => {
+    //  Upon startup, open a connection for each UnaBell.
     const unabellID = allUnaBells[tag];
     const configFile = unabellID + '.json';
     const client = theThingsAPI.createSecureClient(configFile);
-    allClients[tag] = client;
     client.on('error', function (error) {
-        console.error(error.message, error.stack);
+        console.error(unabellID, tag, error.message, error.stack);
     });
     client.on('ready', function () {
-        const obj = { values: [
-                { key: 'status', value: 'button_pressed' },
-                { key: 'tag', value: tag },
-            ] };
-        client.thingWrite(obj, function (error, data) {
-            if (error) {
-                console.error(error.message, error.stack);
-                return error;
-            }
-            console.log(tag, unabellID, { data });
-        });
-        /* client.thingRead('temperature', {limit:1}, function (error, data) {
-          if (error) {
-            console.error(error.message, error.stack);
-            return error;
-          }
-          console.log({ data });
-        }); */
+        //  Upon connecting, save the connection so we can send data later.
+        allClientsByTag[tag] = client;
+        allClientsByID[tag] = client;
+        //  For development: Send the test status upon connection.
+        if (process.env.NODE_ENV !== 'production') {
+            sendStatus(client, unabellID, tag);
+        }
     });
 });
 /*
@@ -60,4 +66,11 @@ const obj = {
     }}]
 };
 */
+/* client.thingRead('temperature', {limit:1}, function (error, data) {
+  if (error) {
+    console.error(error.message, error.stack);
+    return error;
+  }
+  console.log({ data });
+}); */
 //# sourceMappingURL=index.js.map
