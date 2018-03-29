@@ -22,7 +22,7 @@ function trigger(params, callback) {
       {"key": "tag", "value": "excellent"}
     ],
     "action": "write" */
-    console.log(['trigger', new Date().toISOString(), analytics, params].join('-'.repeat(5)));
+    console.log(['trigger', new Date().toISOString(), JSON.stringify({ analytics }, null, 2), JSON.stringify({ params }, null, 2)].join('-'.repeat(5)));
     const event = { name: "button_pressed", value: "excellent" };
     analytics.events.create(event);
     //  Call the update_kpi cloud function to update the KPI, since triggers are not allowed to access KPIs.

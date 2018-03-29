@@ -2,7 +2,7 @@
 //  This Cloud Code Function computes the Score KPI.  Because Trigger Functions
 //  are not allowed to access the KPI.
 function main(params, callback) {
-    console.log(['func', new Date().toISOString(), analytics, params].join('-'.repeat(5)));
+    console.log(['func', new Date().toISOString(), JSON.stringify({ analytics }, null, 2), JSON.stringify({ params }, null, 2)].join('-'.repeat(5)));
     analytics.events.getValuesByName('button_pressed', function (error, data) {
         console.log(new Date().toISOString(), analytics, JSON.stringify(data, null, 2));
         analytics.kpis.create('score', 2.34);
