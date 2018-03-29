@@ -22,9 +22,25 @@ function trigger(params: TriggerParams, callback: ()=>void) {
     {"key": "tag", "value": "excellent"}
   ],
   "action": "write" */
-  console.log(new Date().toISOString(), analytics, { trigger: params });
+  console.log(['trigger', new Date().toISOString(), analytics, params].join('-'.repeat(5)));
   const event = { name: "button_pressed", value: "excellent" };
   analytics.events.create(event);
+
+  //  Call the update_kpi cloud function to update the KPI, since triggers are not allowed to access KPIs.
+  const request: HTTPRequest = {
+    host: 'api.thethings.io',
+    path: `/v2/things/${params.thingToken}/code/functions/update_kpi`,
+    port: 80,
+    method: 'POST',
+    secure: false,
+    headers: { 'Content-Type': 'application/json' }
+  };
+  httpRequest(request, `{"a":1}`, function(error, response) {
+    if (error) console.error(error.message, error.stack);
+    console.log(new Date().toISOString(), "Done", { trigger: params, request, response });
+    callback();
+  });
+
   if (!analytics.kpis) {
     //  KPIs are missing when things are first created.  Need to run the batch job to create the KPI.
     console.error('Missing KPI module. Run the batch job and create the KPI first', params);
@@ -34,17 +50,25 @@ function trigger(params: TriggerParams, callback: ()=>void) {
     const tags = ["tag1"];
     analytics.kpis.create(name, value, tags);
   }
-  console.log(new Date().toISOString(), "Done", { trigger: params });
-  callback();
 }
+
+declare function httpRequest(request: HTTPRequest, body: string, callback: (error: Error, response: object)=>void)
 
 interface TriggerParams {
   "thingToken": "xxx",
   "values": [
     {"key": "status", "value": "button_pressed", "geo": {"lat": 1, "long": 104}},
+    {key: 'presses', value: 1},
     {"key": "tag", "value": "excellent"}
-    ],
+  ],
   "action": "write"
 }
 
-declare const analytics;
+interface HTTPRequest {
+  host: string
+  path: string
+  port: number
+  method: string
+  secure: boolean
+  headers: object
+}

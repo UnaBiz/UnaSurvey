@@ -2,10 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0bfbdbb9-79be-439b-a32c-ecdd21e3bd76" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/hourly_summary.js.map" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/hourly_summary.ts" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/update_kpi.ts" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/hourly_summary.js" afterPath="$PROJECT_DIR$/hourly_summary.js" />
+      <change beforePath="$PROJECT_DIR$/update_response_counters.js" afterPath="$PROJECT_DIR$/update_response_counters.js" />
+      <change beforePath="$PROJECT_DIR$/update_response_counters.js.map" afterPath="$PROJECT_DIR$/update_response_counters.js.map" />
       <change beforePath="$PROJECT_DIR$/update_response_counters.ts" afterPath="$PROJECT_DIR$/update_response_counters.ts" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -29,24 +29,10 @@
       <file leaf-file-name="index.ts" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/index.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-776">
-              <caret line="39" column="15" lean-forward="false" selection-start-line="38" selection-start-column="0" selection-end-line="45" selection-end-column="4" />
+            <state relative-caret-position="271">
+              <caret line="43" column="0" lean-forward="false" selection-start-line="42" selection-start-column="0" selection-end-line="43" selection-end-column="0" />
               <folding>
                 <element signature="n#!!doc" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/index.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="600">
-              <caret line="30" column="20" lean-forward="false" selection-start-line="30" selection-start-column="20" selection-end-line="30" selection-end-column="20" />
-              <folding>
-                <marker date="1522354978000" expanded="true" signature="2232:2496" ph="{...}" />
-                <marker date="1522354978000" expanded="true" signature="3139:3141" ph="/*...*/" />
-                <marker date="1522354978000" expanded="true" signature="3141:3325" ph="/*...*/" />
               </folding>
             </state>
           </provider>
@@ -55,28 +41,8 @@
       <file leaf-file-name="update_response_counters.ts" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/update_response_counters.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="120">
-              <caret line="20" column="0" lean-forward="false" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="hourly_summary.ts" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/hourly_summary.ts">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="384">
-              <caret line="23" column="0" lean-forward="true" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="hourly_summary.js" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/hourly_summary.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="340">
-              <caret line="17" column="7" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="19" selection-end-column="42" />
+            <state relative-caret-position="200">
+              <caret line="24" column="0" lean-forward="false" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -85,48 +51,50 @@
       <file leaf-file-name="update_response_counters.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/update_response_counters.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="384">
-              <caret line="34" column="29" lean-forward="false" selection-start-line="34" selection-start-column="29" selection-end-line="34" selection-end-column="29" />
+            <state relative-caret-position="406">
+              <caret line="32" column="23" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="53" selection-end-column="52" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="unabell_4da0b6.json" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/unabell_4da0b6.json">
+      <file leaf-file-name="update_kpi.ts" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/update_kpi.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="20">
-              <caret line="1" column="61" lean-forward="false" selection-start-line="1" selection-start-column="18" selection-end-line="1" selection-end-column="61" />
+            <state relative-caret-position="80">
+              <caret line="4" column="0" lean-forward="true" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
+              <folding>
+                <element signature="n#!!doc" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="update_kpi.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/update_kpi.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="220">
+              <caret line="11" column="46" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="21" selection-end-column="38" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="unabell_4da240.json" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/unabell_4da240.json">
+      <file leaf-file-name="tsconfig.json" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/tsconfig.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="60">
-              <caret line="3" column="0" lean-forward="false" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
+            <state relative-caret-position="360">
+              <caret line="18" column="0" lean-forward="false" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="unabell_4d9f7c.json" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/unabell_4d9f7c.json">
+      <file leaf-file-name="hourly_summary.ts" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/hourly_summary.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="20">
-              <caret line="1" column="61" lean-forward="false" selection-start-line="1" selection-start-column="18" selection-end-line="1" selection-end-column="61" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="unabell_4d9a51.json" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/unabell_4d9a51.json">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="60">
-              <caret line="3" column="0" lean-forward="false" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
+            <state relative-caret-position="100">
+              <caret line="5" column="0" lean-forward="false" selection-start-line="5" selection-start-column="0" selection-end-line="19" selection-end-column="5" />
               <folding />
             </state>
           </provider>
@@ -138,8 +106,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="package_json" />
-        <option value="TypeScript File" />
         <option value="JavaScript File" />
+        <option value="TypeScript File" />
       </list>
     </option>
   </component>
@@ -157,10 +125,11 @@
         <option value="$PROJECT_DIR$/unabell_4da0b6.json" />
         <option value="$PROJECT_DIR$/unabell_4d9a51.json" />
         <option value="$PROJECT_DIR$/unabell_4da240.json" />
-        <option value="$PROJECT_DIR$/update_response_counters.js" />
         <option value="$PROJECT_DIR$/hourly_summary.js" />
         <option value="$PROJECT_DIR$/index.ts" />
         <option value="$PROJECT_DIR$/hourly_summary.ts" />
+        <option value="$PROJECT_DIR$/update_response_counters.js" />
+        <option value="$PROJECT_DIR$/update_kpi.ts" />
         <option value="$PROJECT_DIR$/update_response_counters.ts" />
       </list>
     </option>
@@ -186,10 +155,10 @@
     <handled-path value="$PROJECT_DIR$/node_modules" />
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="391" />
-    <option name="y" value="-1034" />
+    <option name="x" value="491" />
+    <option name="y" value="-1148" />
     <option name="width" value="1680" />
-    <option name="height" value="960" />
+    <option name="height" value="1088" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
@@ -232,16 +201,6 @@
             <path>
               <item name="UnaSurvey" type="b2602c69:ProjectViewProjectNode" />
               <item name="UnaSurvey" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="UnaSurvey" type="b2602c69:ProjectViewProjectNode" />
-              <item name="UnaSurvey" type="462c0819:PsiDirectoryNode" />
-              <item name="hourly_summary.ts" type="620a8d5e:NestingTreeNode" />
-            </path>
-            <path>
-              <item name="UnaSurvey" type="b2602c69:ProjectViewProjectNode" />
-              <item name="UnaSurvey" type="462c0819:PsiDirectoryNode" />
-              <item name="update_response_counters.ts" type="620a8d5e:NestingTreeNode" />
             </path>
           </expand>
           <select />
@@ -297,7 +256,7 @@
       <workItem from="1522222038773" duration="4492000" />
       <workItem from="1522290397774" duration="15000" />
       <workItem from="1522293017068" duration="4637000" />
-      <workItem from="1522349655127" duration="4606000" />
+      <workItem from="1522349655127" duration="8403000" />
     </task>
     <task id="LOCAL-00001" summary="First version">
       <created>1522222114649</created>
@@ -390,14 +349,28 @@
       <option name="project" value="LOCAL" />
       <updated>1522355008844</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="Moved KPI to batch job">
+      <created>1522357453214</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1522357453214</updated>
+    </task>
+    <task id="LOCAL-00015" summary="KPI working after creating KPI in batch job">
+      <created>1522358024799</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1522358024799</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="14878000" />
+    <option name="totallyTimeSpent" value="18675000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="391" y="-1034" width="1680" height="960" extended-state="0" />
+    <frame x="491" y="-1148" width="1680" height="1088" extended-state="0" />
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32843894" sideWeight="0.58600736" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Regex Tester" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="15" side_tool="false" content_ui="tabs" />
@@ -405,12 +378,12 @@
       <window_info id="Run" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3163539" sideWeight="0.7596207" order="11" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25536993" sideWeight="0.42842105" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3291032" sideWeight="0.49746192" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="TypeScript" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32818073" sideWeight="0.5" order="19" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18803419" sideWeight="0.64705884" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="TypeScript" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.14138287" sideWeight="0.5" order="19" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.18803419" sideWeight="0.64705884" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Tail" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.1888798" sideWeight="0.34126985" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.16649105" sideWeight="0.73084676" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.30952382" sideWeight="0.5095465" order="10" side_tool="true" content_ui="tabs" x="60" y="-1201" width="1383" height="470" />
+      <window_info id="Debug" active="true" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.30952382" sideWeight="0.5095465" order="10" side_tool="true" content_ui="tabs" x="60" y="-1201" width="1383" height="470" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.15323646" sideWeight="0.3529412" order="5" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -450,6 +423,8 @@
         <option value="$PROJECT_DIR$/update_response_counters.js.map" />
         <option value="$PROJECT_DIR$/hourly_summary.js.map" />
         <option value="$PROJECT_DIR$/hourly_summary.js" />
+        <option value="$PROJECT_DIR$/update_kpi.js" />
+        <option value="$PROJECT_DIR$/update_kpi.js.map" />
       </list>
     </option>
   </component>
@@ -470,7 +445,9 @@
     <MESSAGE value="Allow token to be specified inline" />
     <MESSAGE value="KPI not supported. Backtracking" />
     <MESSAGE value="Send numeric presses" />
-    <option name="LAST_COMMIT_MESSAGE" value="Send numeric presses" />
+    <MESSAGE value="Moved KPI to batch job" />
+    <MESSAGE value="KPI working after creating KPI in batch job" />
+    <option name="LAST_COMMIT_MESSAGE" value="KPI working after creating KPI in batch job" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -499,9 +476,9 @@
         <state relative-caret-position="600">
           <caret line="30" column="20" lean-forward="true" selection-start-line="30" selection-start-column="20" selection-end-line="30" selection-end-column="20" />
           <folding>
-            <marker date="1522354978000" expanded="true" signature="2232:2496" ph="{...}" />
-            <marker date="1522354978000" expanded="true" signature="3139:3141" ph="/*...*/" />
-            <marker date="1522354978000" expanded="true" signature="3141:3325" ph="/*...*/" />
+            <marker date="1522360474000" expanded="true" signature="2232:2496" ph="{...}" />
+            <marker date="1522360474000" expanded="true" signature="3139:3141" ph="/*...*/" />
+            <marker date="1522360474000" expanded="true" signature="3141:3325" ph="/*...*/" />
           </folding>
         </state>
       </provider>
@@ -758,14 +735,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tsconfig.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="18" column="0" lean-forward="false" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/node_modules/thethingsio-api/http-client.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -818,9 +787,9 @@
         <state relative-caret-position="600">
           <caret line="30" column="20" lean-forward="false" selection-start-line="30" selection-start-column="20" selection-end-line="30" selection-end-column="20" />
           <folding>
-            <marker date="1522354978000" expanded="true" signature="2232:2496" ph="{...}" />
-            <marker date="1522354978000" expanded="true" signature="3139:3141" ph="/*...*/" />
-            <marker date="1522354978000" expanded="true" signature="3141:3325" ph="/*...*/" />
+            <marker date="1522360474000" expanded="true" signature="2232:2496" ph="{...}" />
+            <marker date="1522360474000" expanded="true" signature="3139:3141" ph="/*...*/" />
+            <marker date="1522360474000" expanded="true" signature="3141:3325" ph="/*...*/" />
           </folding>
         </state>
       </provider>
@@ -841,18 +810,34 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/update_response_counters.js">
+    <entry file="file://$PROJECT_DIR$/hourly_summary.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="384">
-          <caret line="34" column="29" lean-forward="false" selection-start-line="34" selection-start-column="29" selection-end-line="34" selection-end-column="29" />
+        <state relative-caret-position="380">
+          <caret line="19" column="24" lean-forward="false" selection-start-line="19" selection-start-column="24" selection-end-line="19" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tsconfig.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="18" column="0" lean-forward="false" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hourly_summary.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="100">
+          <caret line="5" column="0" lean-forward="false" selection-start-line="5" selection-start-column="0" selection-end-line="19" selection-end-column="5" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/index.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-776">
-          <caret line="39" column="15" lean-forward="false" selection-start-line="38" selection-start-column="0" selection-end-line="45" selection-end-column="4" />
+        <state relative-caret-position="271">
+          <caret line="43" column="0" lean-forward="false" selection-start-line="42" selection-start-column="0" selection-end-line="43" selection-end-column="0" />
           <folding>
             <element signature="n#!!doc" expanded="true" />
           </folding>
@@ -861,27 +846,52 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/update_response_counters.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="20" column="0" lean-forward="false" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
+        <state relative-caret-position="200">
+          <caret line="24" column="0" lean-forward="false" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/hourly_summary.ts">
+    <entry file="file://$PROJECT_DIR$/update_response_counters.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="384">
-          <caret line="23" column="0" lean-forward="true" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
+        <state relative-caret-position="406">
+          <caret line="32" column="23" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="53" selection-end-column="52" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/hourly_summary.js">
+    <entry file="file://$PROJECT_DIR$/update_kpi.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="17" column="7" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="19" selection-end-column="42" />
+        <state relative-caret-position="80">
+          <caret line="4" column="0" lean-forward="true" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/update_kpi.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="220">
+          <caret line="11" column="46" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="21" selection-end-column="38" />
           <folding />
         </state>
       </provider>
     </entry>
+  </component>
+  <component name="masterDetails">
+    <states>
+      <state key="ScopeChooserConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+    </states>
   </component>
 </project>
