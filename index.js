@@ -38,6 +38,7 @@ function sendStatus(unabellID0) {
     const obj = {
         values: [
             { key: 'status', value: 'button_pressed', geo: { lat: 1, long: 104 } },
+            { key: 'presses', value: 1 },
             { key: 'tag', value: tag },
         ]
     };
