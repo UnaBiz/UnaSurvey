@@ -19,6 +19,7 @@ function trigger(params, callback) {
     "thingToken": "xxx",
     "values": [
       {"key": "status", "value": "button_pressed", "geo": {"lat": 1, "long": 104}},
+      {key: 'presses', value: 1},
       {"key": "tag", "value": "excellent"}
     ],
     "action": "write" */
@@ -26,38 +27,11 @@ function trigger(params, callback) {
     const event = { name: "button_pressed", value: "excellent" };
     analytics.events.create(event);
     //  Call the update_kpi cloud function to update the KPI, since triggers are not allowed to access KPIs.
-    const body = 
-    //JSON.stringify(params, null, 2),
-    '{"a":1}';
-    const request = {
-        // host: 'api.thethings.io',
-        // path: `/v2/things/${params.thingToken}/code/functions/update_kpi`,
-        //  https://hookb.in/vLNWWj7o
-        host: 'hookb.in',
-        path: `/vLNWWj7o?things/${params.thingToken}/code/functions/update_kpi`,
-        port: 443,
-        method: 'POST',
-        secure: true,
-        headers: {
-            'Content-Type': 'application/json',
-            'Content-Length': body.length,
-        }
-    };
-    httpRequest(request, body, function (error, response) {
+    thethingsAPI.cloudFunction('update_kpi', params, function (error, response) {
         if (error)
             console.error(error.message, error.stack);
-        console.log(new Date().toISOString(), "Done", { trigger: params, request, response });
+        console.log(new Date().toISOString(), "Done", { trigger: params, response });
         callback();
     });
-    if (!analytics.kpis) {
-        //  KPIs are missing when things are first created.  Need to run the batch job to create the KPI.
-        console.error('Missing KPI module. Run the batch job and create the KPI first', params);
-    }
-    else {
-        const name = "Excellent Count";
-        const value = 123;
-        const tags = ["tag1"];
-        analytics.kpis.create(name, value, tags);
-    }
 }
 //# sourceMappingURL=update_response_counters.js.map
