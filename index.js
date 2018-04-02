@@ -37,9 +37,8 @@ function sendStatus(unabellID0) {
     //  Status object to be sent.
     const obj = {
         values: [
-            { key: 'status', value: 'button_pressed', geo: { lat: 1, long: 104 } },
-            { key: 'presses', value: 1 },
-            { key: 'tag', value: tag },
+            { key: 'button_pressed', value: tag,
+                geo: { lat: 1, long: 104 } },
         ]
     };
     //  Send the data.

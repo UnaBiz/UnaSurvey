@@ -17,32 +17,39 @@
 function trigger(params: TriggerParams, callback: ()=>void) {
   /* params contains
   "thingToken": "xxx",
-  "values": [
-    {"key": "status", "value": "button_pressed", "geo": {"lat": 1, "long": 104}},
-    {key: 'presses', value: 1},
-    {"key": "tag", "value": "excellent"}
-  ],
-  "action": "write" */
+  "action": "write",
+  "values": [ {"key": "button_pressed", "value": "excellent", "geo": {"lat": 1, "long": 104}} ] */
   console.log(['trigger', new Date().toISOString(), JSON.stringify({ analytics }, null, 2), JSON.stringify({ params }, null, 2)].join('-'.repeat(5)));
-  const event = { name: "button_pressed", value: "excellent" };
+  //  Identify the button that was pressed e.g. "excellent"
+  const buttonPressed = params.values.find(val => (val.key === 'button_pressed'));
+  if (!buttonPressed) {
+    console.error('Unknown event', JSON.stringify(params, null, 2));
+    return callback();
+  }
+  //  buttonPressed contains {"key": "button_pressed", "value": "excellent", "geo": "..."}
+  const tag = buttonPressed.value;
+
+  //  Log a button_pressed event by the button pressed e.g. "excellent"
+  const event = { name: "button_pressed", value: tag };
   analytics.events.create(event);
 
   //  Call the update_kpi cloud function to update the KPI, since triggers are not allowed to access KPIs.
   thethingsAPI.cloudFunction('update_kpi', params, function(error, response) {
     if (error) console.error(error.message, error.stack);
     console.log(new Date().toISOString(), "Done", { trigger: params, response });
-    callback();
+    return callback();
   });
 }
 
 declare const thethingsAPI;
 
+//  Declare the trigger parameter format
 interface TriggerParams {
   "thingToken": "xxx",
   "values": [
-    {"key": "status", "value": "button_pressed", "geo": {"lat": 1, "long": 104}},
-    {key: 'presses', value: 1},
-    {"key": "tag", "value": "excellent"}
+    //  This indicates that the button with that value was pressed.
+    {"key": "button_pressed", "value": "excellent",
+      "geo": {"lat": 1, "long": 104}}
   ],
   "action": "write"
 }

@@ -4,10 +4,10 @@
 function main(params, callback) {
     console.log(['func', new Date().toISOString(), JSON.stringify({ analytics }, null, 2), JSON.stringify({ params }, null, 2)].join('-'.repeat(5)));
     analytics.events.getValuesByName('button_pressed', function (error, data) {
-        console.log(new Date().toISOString(), analytics, JSON.stringify(data, null, 2));
+        console.log(new Date().toISOString(), analytics, JSON.stringify({ data }, null, 2));
         analytics.kpis.create('score', 2.34);
         console.log(new Date().toISOString(), "Done", { main: params });
-        callback();
+        callback(null, 'OK');
         /*
         var high0 = data.filter(function(val){
           return val > 0;
@@ -17,6 +17,5 @@ function main(params, callback) {
         }).avg();
         */
     });
-    callback(null, 'OK');
 }
 //# sourceMappingURL=update_kpi.js.map
