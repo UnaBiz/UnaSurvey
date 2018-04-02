@@ -17,6 +17,6 @@ function main(params, callback) {
         }).avg();
         */
     });
-    callback(null, params.quote + 42);
+    callback(null, 'OK');
 }
 //# sourceMappingURL=update_kpi.js.map

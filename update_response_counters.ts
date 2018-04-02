@@ -27,15 +27,28 @@ function trigger(params: TriggerParams, callback: ()=>void) {
   analytics.events.create(event);
 
   //  Call the update_kpi cloud function to update the KPI, since triggers are not allowed to access KPIs.
+  const body =
+    //JSON.stringify(params, null, 2),
+    '{"a":1}';
   const request: HTTPRequest = {
-    host: 'api.thethings.io',
-    path: `/v2/things/${params.thingToken}/code/functions/update_kpi`,
-    port: 80,
+    // host: 'api.thethings.io',
+    // path: `/v2/things/${params.thingToken}/code/functions/update_kpi`,
+
+    //  https://hookb.in/vLNWWj7o
+    host: 'hookb.in',
+    path: `/vLNWWj7o?things/${params.thingToken}/code/functions/update_kpi`,
+
+    port: 443,
     method: 'POST',
-    secure: false,
-    headers: { 'Content-Type': 'application/json' }
+    secure: true,
+    headers: {
+      'Content-Type': 'application/json',
+      'Content-Length': body.length,
+    }
   };
-  httpRequest(request, `{"a":1}`, function(error, response) {
+  httpRequest(request,
+    body,
+    function(error, response) {
     if (error) console.error(error.message, error.stack);
     console.log(new Date().toISOString(), "Done", { trigger: params, request, response });
     callback();
