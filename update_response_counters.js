@@ -24,19 +24,24 @@ function trigger(params, callback) {
     const buttonPressed = params.values.find(val => (val.key === 'button_pressed'));
     if (!buttonPressed) {
         console.error('Unknown event', JSON.stringify(params, null, 2));
-        return callback();
+        return callback(null, 'OK');
     }
     //  buttonPressed contains {"key": "button_pressed", "value": "excellent", "geo": "..."}
     const tag = buttonPressed.value;
     //  Log a button_pressed event by the button pressed e.g. "excellent"
-    const event = { name: "button_pressed", value: tag };
+    // const event = { name: "button_pressed", value: tag };
+    const event = { name: "aaa", value: 'bbb' };
     analytics.events.create(event);
+    console.log('Created event', event);
     //  Call the update_kpi cloud function to update the KPI, since triggers are not allowed to access KPIs.
     thethingsAPI.cloudFunction('update_kpi', params, function (error, response) {
         if (error)
             console.error(error.message, error.stack);
         console.log(new Date().toISOString(), "Done", { trigger: params, response });
-        return callback();
+        //  Wait for update_kpi cloud function to complete.
+        return callback(null, 'OK');
     });
+    //  Don't wait for update_kpi cloud function to complete.
+    //  return callback(null, 'OK');
 }
 //# sourceMappingURL=update_response_counters.js.map
