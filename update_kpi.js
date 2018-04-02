@@ -3,7 +3,6 @@
 //  are not allowed to access the KPI.
 function main(params, callback) {
     console.log(['func', new Date().toISOString(), JSON.stringify({ analytics }, null, 2), JSON.stringify({ params }, null, 2)].join('-'.repeat(5)));
-    analytics.events.create({ name: 'aaa', value: 'yyy' });
     /*
     //  Identify the button that was pressed e.g. "excellent"
     const buttonPressed = params.values.find(val => (val.key === 'button_pressed'));
@@ -20,8 +19,7 @@ function main(params, callback) {
     analytics.events.create(event);
     */
     //  Fetch the historical events and compute the KPIs.
-    analytics.events.getValuesByName('aaa', function (error, data) {
-        // analytics.events.getByName('button_pressed',function(error, data){
+    analytics.events.getValuesByName('button_pressed', function (error, data) {
         if (error) {
             console.error(error, error.message, error.stack);
             return callback(null, 'OK'); // Don't propagate error to caller.

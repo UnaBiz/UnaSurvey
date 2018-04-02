@@ -31,8 +31,7 @@ function trigger(params: TriggerParams, callback: (err: Error, result: any)=>voi
   const tag = buttonPressed.value;
 
   //  Log a button_pressed event by the button pressed e.g. "excellent"
-  // const event = { name: "button_pressed", value: tag };
-  const event = { name: "aaa", value: 'bbb' };
+  const event = { name: "button_pressed", value: tag };
   analytics.events.create(event);
   console.log('Created event', event);
 

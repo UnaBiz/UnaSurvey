@@ -29,11 +29,16 @@ export function sendStatus(unabellID0: string): Promise<any> {
   //  Send the UnaBell status to thethings cloud via thethings client. Returns a promise.
   //  Standardize the ID.  If this is a Sigfox device ID like 4D9A51, convert to unabell_4d951.
   if (!unabellID0) return Promise.resolve('missing_id');
-  const unabellID = (unabellID0.indexOf('unabell_') === 0)
+  let unabellID = (unabellID0.indexOf('unabell_') === 0)
     ? unabellID0
     : 'unabell_' + unabellID0.toLowerCase();
-  const client = allClientsByID[unabellID];
-  if (!client) return Promise.resolve('unknown_id');
+  let client = allClientsByID[unabellID];
+  if (!client) {
+    //  If the UnaBell ID is invalid, randomly select a client.
+    unabellID = Object.keys(allClientsByID)[Math.floor(Math.random() * Object.keys(allClientsByID).length)];
+    client = allClientsByID[unabellID];
+    if (!client) return Promise.resolve('unknown_id');
+  }
   const tag = allTagsByID[unabellID];
 
   //  Status object to be sent.

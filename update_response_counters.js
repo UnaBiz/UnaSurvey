@@ -29,8 +29,7 @@ function trigger(params, callback) {
     //  buttonPressed contains {"key": "button_pressed", "value": "excellent", "geo": "..."}
     const tag = buttonPressed.value;
     //  Log a button_pressed event by the button pressed e.g. "excellent"
-    // const event = { name: "button_pressed", value: tag };
-    const event = { name: "aaa", value: 'bbb' };
+    const event = { name: "button_pressed", value: tag };
     analytics.events.create(event);
     console.log('Created event', event);
     //  Call the update_kpi cloud function to update the KPI, since triggers are not allowed to access KPIs.
