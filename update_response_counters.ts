@@ -35,17 +35,22 @@ function trigger(params: TriggerParams, callback: (err: Error, result: any)=>voi
   analytics.events.create(event);
   console.log('Created event', event);
 
+  //  Log an event with the button pressed (e.g. "button_pressed_excellent") and the timestamp.
+  const event2 = { name: `button_pressed_${tag}`, value: Date.now() };
+  analytics.events.create(event2);
+  console.log('Created event', event2);
+
   //  Call the update_kpi cloud function to update the KPI, since triggers are not allowed to access KPIs.
   thethingsAPI.cloudFunction('update_kpi', params, function(error, response) {
     if (error) console.error(error.message, error.stack);
     console.log(new Date().toISOString(), "Done", { trigger: params, response });
 
     //  Wait for update_kpi cloud function to complete.
-    return callback(null, 'OK');
+    //  return callback(null, 'OK');
   });
 
   //  Don't wait for update_kpi cloud function to complete.
-  //  return callback(null, 'OK');
+  return callback(null, 'OK');
 }
 
 declare const thethingsAPI;

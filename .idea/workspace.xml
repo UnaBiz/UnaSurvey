@@ -3,9 +3,12 @@
   <component name="ChangeListManager">
     <list default="true" id="0bfbdbb9-79be-439b-a32c-ecdd21e3bd76" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/update_kpi.js" afterPath="$PROJECT_DIR$/update_kpi.js" />
-      <change beforePath="$PROJECT_DIR$/update_kpi.js.map" afterPath="$PROJECT_DIR$/update_kpi.js.map" />
-      <change beforePath="$PROJECT_DIR$/update_kpi.ts" afterPath="$PROJECT_DIR$/update_kpi.ts" />
+      <change beforePath="$PROJECT_DIR$/index.js" afterPath="$PROJECT_DIR$/index.js" />
+      <change beforePath="$PROJECT_DIR$/index.js.map" afterPath="$PROJECT_DIR$/index.js.map" />
+      <change beforePath="$PROJECT_DIR$/index.ts" afterPath="$PROJECT_DIR$/index.ts" />
+      <change beforePath="$PROJECT_DIR$/update_response_counters.js" afterPath="$PROJECT_DIR$/update_response_counters.js" />
+      <change beforePath="$PROJECT_DIR$/update_response_counters.js.map" afterPath="$PROJECT_DIR$/update_response_counters.js.map" />
+      <change beforePath="$PROJECT_DIR$/update_response_counters.ts" afterPath="$PROJECT_DIR$/update_response_counters.ts" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -45,11 +48,21 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="update_kpi.ts" pinned="false" current-in-tab="true">
+      <file leaf-file-name="update_response_counters.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/update_response_counters.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="190">
+              <caret line="14" column="72" lean-forward="true" selection-start-line="14" selection-start-column="72" selection-end-line="14" selection-end-column="72" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="update_kpi.ts" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/update_kpi.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="756">
-              <caret line="67" column="5" lean-forward="true" selection-start-line="67" selection-start-column="5" selection-end-line="67" selection-end-column="5" />
+            <state relative-caret-position="420">
+              <caret line="35" column="5" lean-forward="true" selection-start-line="35" selection-start-column="5" selection-end-line="35" selection-end-column="5" />
               <folding>
                 <element signature="n#!!doc" expanded="true" />
                 <element signature="e#564#1230#0" expanded="false" />
@@ -61,8 +74,8 @@
       <file leaf-file-name="index.ts" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/index.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-196">
-              <caret line="25" column="48" lean-forward="true" selection-start-line="25" selection-start-column="48" selection-end-line="25" selection-end-column="48" />
+            <state relative-caret-position="460">
+              <caret line="36" column="63" lean-forward="true" selection-start-line="36" selection-start-column="63" selection-end-line="36" selection-end-column="63" />
               <folding>
                 <element signature="n#!!doc" expanded="true" />
               </folding>
@@ -73,8 +86,8 @@
       <file leaf-file-name="update_response_counters.ts" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/update_response_counters.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="700">
-              <caret line="49" column="0" lean-forward="true" selection-start-line="49" selection-start-column="0" selection-end-line="49" selection-end-column="0" />
+            <state relative-caret-position="540">
+              <caret line="41" column="0" lean-forward="false" selection-start-line="41" selection-start-column="0" selection-end-line="41" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -140,10 +153,10 @@
         <option value="$PROJECT_DIR$/hourly_summary.js" />
         <option value="$PROJECT_DIR$/update_response_counters.js" />
         <option value="$PROJECT_DIR$/update_kpi.js" />
-        <option value="$PROJECT_DIR$/index.ts" />
         <option value="$PROJECT_DIR$/hourly_summary.ts" />
-        <option value="$PROJECT_DIR$/update_response_counters.ts" />
         <option value="$PROJECT_DIR$/update_kpi.ts" />
+        <option value="$PROJECT_DIR$/index.ts" />
+        <option value="$PROJECT_DIR$/update_response_counters.ts" />
       </list>
     </option>
   </component>
@@ -276,7 +289,7 @@
       <workItem from="1522293017068" duration="4637000" />
       <workItem from="1522349655127" duration="9664000" />
       <workItem from="1522631084472" duration="10123000" />
-      <workItem from="1522717719001" duration="3288000" />
+      <workItem from="1522717719001" duration="5965000" />
     </task>
     <task id="LOCAL-00001" summary="First version">
       <created>1522222114649</created>
@@ -439,11 +452,18 @@
       <option name="project" value="LOCAL" />
       <updated>1522718032355</updated>
     </task>
-    <option name="localTasksCounter" value="24" />
+    <task id="LOCAL-00024" summary="Computing KPI">
+      <created>1522722390629</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1522722390629</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="33347000" />
+    <option name="totallyTimeSpent" value="36024000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1046" y="-1216" width="1680" height="1088" extended-state="0" />
@@ -528,7 +548,8 @@
     <MESSAGE value="Trigger function calling cloud function OK" />
     <MESSAGE value="Updating KPIs" />
     <MESSAGE value="Events appear OK now" />
-    <option name="LAST_COMMIT_MESSAGE" value="Events appear OK now" />
+    <MESSAGE value="Computing KPI" />
+    <option name="LAST_COMMIT_MESSAGE" value="Computing KPI" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -540,7 +561,7 @@
           <properties />
         </breakpoint>
       </default-breakpoints>
-      <option name="time" value="2" />
+      <option name="time" value="3" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -878,14 +899,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/update_response_counters.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="94">
-          <caret line="11" column="29" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="45" selection-end-column="52" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/hourly_summary.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
@@ -904,14 +917,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/update_response_counters.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="700">
-          <caret line="49" column="0" lean-forward="true" selection-start-line="49" selection-start-column="0" selection-end-line="49" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/update_kpi.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="308">
@@ -922,8 +927,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/index.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-196">
-          <caret line="25" column="48" lean-forward="true" selection-start-line="25" selection-start-column="48" selection-end-line="25" selection-end-column="48" />
+        <state relative-caret-position="460">
+          <caret line="36" column="63" lean-forward="true" selection-start-line="36" selection-start-column="63" selection-end-line="36" selection-end-column="63" />
           <folding>
             <element signature="n#!!doc" expanded="true" />
           </folding>
@@ -932,12 +937,28 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/update_kpi.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="756">
-          <caret line="67" column="5" lean-forward="true" selection-start-line="67" selection-start-column="5" selection-end-line="67" selection-end-column="5" />
+        <state relative-caret-position="420">
+          <caret line="35" column="5" lean-forward="true" selection-start-line="35" selection-start-column="5" selection-end-line="35" selection-end-column="5" />
           <folding>
             <element signature="n#!!doc" expanded="true" />
             <element signature="e#564#1230#0" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/update_response_counters.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="540">
+          <caret line="41" column="0" lean-forward="false" selection-start-line="41" selection-start-column="0" selection-end-line="41" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/update_response_counters.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="190">
+          <caret line="14" column="72" lean-forward="true" selection-start-line="14" selection-start-column="72" selection-end-line="14" selection-end-column="72" />
+          <folding />
         </state>
       </provider>
     </entry>

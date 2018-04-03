@@ -46,6 +46,8 @@ export function sendStatus(unabellID0: string): Promise<any> {
     values: [
       {key: 'button_pressed', value: tag,
         geo: { lat: 1, long: 104 }},
+      {key: 'presses', value: 1},
+      {key: tag, value: 1},
     ]
   };
   //  Send the data.
@@ -91,6 +93,14 @@ Object.keys(allUnaBells).forEach(tag => {
     }
   });
 });
+
+//  For development: Send the test status randomly every 10 seconds.
+if (process.env.NODE_ENV !== 'production') {
+  setInterval(() => {
+    if (Object.keys(allClientsByID).length < Object.keys(allUnaBells).length) return;  //  Not ready yet.
+    sendStatus('random');
+  }, 10 * 1000)
+}
 
 /* client.thingRead('temperature', {limit:1}, function (error, data) {
   if (error) {
