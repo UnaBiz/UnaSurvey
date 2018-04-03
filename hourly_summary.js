@@ -3,7 +3,7 @@
 function job(params, callback) {
     console.log(['job', new Date().toISOString(), JSON.stringify({ analytics }, null, 2), JSON.stringify({ params }, null, 2)].join('-'.repeat(5)));
     analytics.events.getValuesByName('button_pressed', function (error, data) {
-        console.log(new Date().toISOString(), analytics, JSON.stringify(data, null, 2));
+        console.log(['job2', new Date().toISOString(), JSON.stringify({ analytics }, null, 2), JSON.stringify({ data }, null, 2)].join('-'.repeat(5)));
         analytics.kpis.create('score', 4.56);
         console.log(new Date().toISOString(), "Done", { job: params });
         callback();
