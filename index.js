@@ -5,40 +5,34 @@
 //  4D9F7C: Fair
 //  4DA0B6: Poor
 Object.defineProperty(exports, "__esModule", { value: true });
-//  We will also have 4 config files with a Thing Token each:
-//  unabell_4d9a51: Excellent
-//  unabell_4da240: Good Job
-//  unabell_4d9f7c: Fair
-//  unabell_4da0b6: Poor
-//  Each file contains: {"thingToken" : "..."}
-//  Or insert the token inline here:
 const allUnaBells = {
-    excellent: { id: 'unabell_4d9a51', token: null },
-    goodjob: { id: 'unabell_4da240', token: null },
-    fair: { id: 'unabell_4d9f7c', token: null },
-    poor: { id: 'unabell_4da0b6', token: null },
+    '4D9A51': 'excellent',
+    '4DA240': 'goodjob',
+    '4D9F7C': 'fair',
+    '4DA0B6': 'poor',
 };
+/* config.json should contain Sigfox callbackURL and geolocationURL from thethings.io Things Manager: {
+  "callbackURL": "https://subscription.thethings.io/sgfx/?????/??????id={device}&data={data}&snr={snr}&station={station}&avgSnr={avgSnr}&rssi={rssi}&seqNumber={seqNumber}"
+  "geolocationURL": "https://subscription.thethings.io/sgfx/geo/?????/??????id={device}&lat={lat}&lng={lng}&radius={radius}"
+} */
+const config = require('./config.json');
 const allClientsByTag = {}; //  Maps tag to the thethings client
 const allClientsByID = {}; //  Maps UnaBell ID to the thethings client
 const allTagsByID = {}; //  Maps UnaBell ID to the tag
 const theThingsAPI = require("thethingsio-api");
 function sendStatus(unabellID0) {
-    //  Send the UnaBell status to thethings cloud via thethings client. Returns a promise.
-    //  Standardize the ID.  If this is a Sigfox device ID like 4D9A51, convert to unabell_4d951.
+    //  Send the UnaBell status to thethings cloud via callbackURL specified in config.json. Returns a promise.
     if (!unabellID0)
         return Promise.resolve('missing_id');
-    let unabellID = (unabellID0.indexOf('unabell_') === 0)
-        ? unabellID0
-        : 'unabell_' + unabellID0.toLowerCase();
-    let client = allClientsByID[unabellID];
-    if (!client) {
-        //  If the UnaBell ID is invalid, randomly select a client.
-        unabellID = Object.keys(allClientsByID)[Math.floor(Math.random() * Object.keys(allClientsByID).length)];
-        client = allClientsByID[unabellID];
-        if (!client)
-            return Promise.resolve('unknown_id');
+    let unabellID = unabellID0.toUpperCase();
+    let tag = allUnaBells[unabellID];
+    if (!tag) {
+        //  For Simulation: If the UnaBell ID is invalid, randomly select one.
+        unabellID = Object.keys(allUnaBells)[Math.floor(Math.random() * Object.keys(allUnaBells).length)];
+        tag = allUnaBells[unabellID];
     }
-    const tag = allTagsByID[unabellID];
+    if (!tag)
+        return Promise.resolve('unknown_id');
     //  Status object to be sent.
     const obj = {
         values: [
