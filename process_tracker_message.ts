@@ -1,5 +1,4 @@
-//  Save the MAC Address and WiFi RSSI if different from last save.
-//  If we have 2 different MAC Addresses, call the geolocation API.
+//  When a device message is received, either save the MAC Address and WiFi RSSI, or save the time series data to Prometheus.
 /*
    params: is an object with the keys:
     - action: one of 'write' | 'read'
@@ -15,14 +14,18 @@
 
 function trigger(params, callback){
   if (params.action !== 'write') return callback(null);  //  Ignore reads, handle only writes.
-  //  If macAddress or wifiRSSI fields not found, exit.
-  const macAddressEntry = params.values.find(val => val.key === 'macAddress');
-  const wifiRSSIEntry = params.values.find(val => val.key === 'wifiRSSI');
-  if (!macAddressEntry || !wifiRSSIEntry) return callback(null);
+  let cloudFunc = null;
+  //  If this is a WiFi Tracker message, save the WiFi MAC Address and WiFi RSSI by calling cloud function save_wifi.
+  if (findParam(params, 'macAddress')) cloudFunc = 'save_wifi';
+  //  If this is a UnaSurvey UnaBell message, save the label to Prometheus by calling cloud function save_time_series.
+  else if (findParam(params, 'macAddress')) cloudFunc = 'save_time_series';
+
+  //  If nothing to do, quit.
+  if (!cloudFunc) return callback(null);
 
   console.log(['*** process_tracker_message start', new Date().toISOString(), JSON.stringify({ params }, null, 2)].join('-'.repeat(5)));
-  //  Call save_wifi cloud function to save the wifi point and compute wifi geolocation.
-  thethingsAPI.cloudFunction('save_wifi', params, (error, result) => {
+  //  Call cloud function to save the wifi point or save time series data.
+  thethingsAPI.cloudFunction(cloudFunc, params, (error, result) => {
     if (error) {
       console.error('*** process_tracker_message error', error.message, error.stack);
       return callback(null); // Don't propagate error to caller.
@@ -30,15 +33,17 @@ function trigger(params, callback){
     console.log(['*** process_tracker_message OK', new Date().toISOString(), JSON.stringify({ result, params }, null, 2)].join('-'.repeat(5)));
   });
 
-  //  Don't wait for save_wifi to complete.
+  //  Don't wait for cloud function to complete.
   return callback(null);
 }
 
-function findParam(params, key: string) {
-  //
+function findParam(params: { values: Param[] }, key: string): Param|null {
+  //  Find the parameter value by key.  Returns null if not found.
   return params.values.find(val => (val.key === key));
 }
 
+//  Represents a parameter value.
 interface Param {
   key: string,
+  value: string,
 }
