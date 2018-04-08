@@ -23,14 +23,14 @@ function trigger(params, callback){
   //  If nothing to do, quit.
   if (!cloudFunc) return callback(null);
 
-  console.log(['*** process_tracker_message start', new Date().toISOString(), JSON.stringify({ params }, null, 2)].join('-'.repeat(5)));
+  console.log(['*** process_tracker_message start', new Date().toISOString(), JSON.stringify({ cloudFunc, params }, null, 2)].join('-'.repeat(5)));
   //  Call cloud function to save the wifi point or save time series data.
   thethingsAPI.cloudFunction(cloudFunc, params, (error, result) => {
     if (error) {
       console.error('*** process_tracker_message error', error.message, error.stack);
       return callback(null); // Don't propagate error to caller.
     }
-    console.log(['*** process_tracker_message OK', new Date().toISOString(), JSON.stringify({ result, params }, null, 2)].join('-'.repeat(5)));
+    console.log(['*** process_tracker_message OK', new Date().toISOString(), JSON.stringify({ result, cloudFunc, params }, null, 2)].join('-'.repeat(5)));
   });
 
   //  Don't wait for cloud function to complete.
@@ -43,7 +43,7 @@ function findParam(params: { values: Param[] }, key: string): Param|null {
 }
 
 //  Represents a parameter value.
-interface Param {
+export interface Param {
   key: string,
   value: string,
 }
