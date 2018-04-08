@@ -5,6 +5,7 @@
 //  4D9F7C: Fair
 //  4DA0B6: Poor
 Object.defineProperty(exports, "__esModule", { value: true });
+//  All UnaBell device IDs and their labels
 const allUnaBells = {
     '4D9A51': 'excellent',
     '4DA240': 'goodjob',
@@ -20,8 +21,10 @@ const axios = require('axios');
 function composeRequest(msg0) {
     // Compose the HTTP POST request body to send the Sigfox message to thethings.io.  This calls the Cloud Function sigfox_parser.
     const msg = Object.assign({}, msg0); // Clone the message
-    if (!msg.id)
+    if (!msg.device)
         throw new Error('missing_device');
+    msg.id = msg.device;
+    delete msg.device;
     if (!msg.avgSnr)
         msg.avgSnr = 0;
     if (!msg.seqNumber)
@@ -47,55 +50,56 @@ function composeRequest(msg0) {
   `;
   */
 }
-function sendStatus(unabellID0, seqNumber) {
-    //  Send the UnaBell status to thethings cloud via callbackURL specified in config.json. Returns a promise.
+function sendStatus(unabellID0, msg) {
+    //  Send the UnaBell status to thethings cloud via callbackURL specified in config.json.
+    //  msg is the Sigfox callback message. Returns a promise.
     if (!unabellID0)
         return Promise.resolve('missing_id');
     let unabellID = unabellID0.toUpperCase();
-    let tag = allUnaBells[unabellID];
-    if (!tag) {
+    let label = allUnaBells[unabellID];
+    if (!label) {
         //  For Simulation: If the UnaBell ID is invalid, randomly select one.
         unabellID = Object.keys(allUnaBells)[Math.floor(Math.random() * Object.keys(allUnaBells).length)];
-        tag = allUnaBells[unabellID];
+        label = allUnaBells[unabellID];
     }
-    if (!tag)
+    if (!label)
         return Promise.resolve('unknown_id');
     /*
     //  Status object to be sent.
     const obj = {
       values: [
-        {key: 'button_pressed', value: tag,
+        {key: 'button_pressed', value: label,
           geo: { lat: 1, long: 104 }},
         {key: 'presses', value: 1},
-        {key: tag, value: 1},
+        {key: label, value: 1},
       ]
     };
     */
     //  Compose the thethings.io URL for sending the event.
-    const msg = composeRequest({ tag, id: unabellID, seqNumber });
+    msg = composeRequest(Object.assign({}, msg, { label, device: unabellID }));
     const url = config.callbackURL;
     //  Send the event.
     return axios.post(url, msg)
         .then(res => {
         const result = res.data;
-        console.log(unabellID, tag, { result });
+        console.log(unabellID, label, { result });
         return result;
     })
         .catch(error => {
         if (error.response) {
             // The request was made and the server responded with a status code
             // that falls out of the range of 2xx
-            console.error(unabellID, tag, url, error.response.data, error.response.status, error.response.headers);
+            console.error(unabellID, label, url, error.response.data, error.response.status, error.response.headers);
         }
         else if (error.request) {
             // The request was made but no response was received
             // `error.request` is an instance of XMLHttpRequest in the browser and an instance of
             // http.ClientRequest in node.js
-            console.error(unabellID, tag, url, error.request);
+            console.error(unabellID, label, url, error.request);
         }
         else {
             // Something happened in setting up the request that triggered an Error
-            console.error(unabellID, tag, url, error.message, error.stack);
+            console.error(unabellID, label, url, error.message, error.stack);
         }
         throw error;
     });
@@ -105,7 +109,7 @@ exports.sendStatus = sendStatus;
 if (process.env.NODE_ENV !== 'production') {
     let lastSeqNumber = 0;
     setInterval(() => {
-        sendStatus('random', lastSeqNumber++);
+        sendStatus('random', { seqNumber: lastSeqNumber++ });
     }, 10 * 1000);
 }
 //# sourceMappingURL=index.js.map
