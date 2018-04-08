@@ -12,14 +12,13 @@ const allUnaBells = {
     '4DA0B6': 'poor',
 };
 /* config.json should contain Sigfox callbackURL and geolocationURL from thethings.io Things Manager: {
-  "callbackURL": "https://subscription.thethings.io/sgfx/?????/??????id={device}&data={data}&snr={snr}&station={station}&avgSnr={avgSnr}&rssi={rssi}&seqNumber={seqNumber}"
-  "geolocationURL": "https://subscription.thethings.io/sgfx/geo/?????/??????id={device}&lat={lat}&lng={lng}&radius={radius}"
+  "callbackURL": "https://subscription.thethings.io/sgfx/?????/??????"
+  "geolocationURL": "https://subscription.thethings.io/sgfx/geo/?????/??????"
 } */
 const config = require('./config.json');
 const axios = require('axios');
 function composeRequest(msg0) {
     // Compose the HTTP POST request body to send the Sigfox message to thethings.io.  This calls the Cloud Function sigfox_parser.
-    // callbackURL looks like "https://subscription.thethings.io/sgfx/?????/??????id={device}&data={data}&snr={snr}&station={station}&avgSnr={avgSnr}&rssi={rssi}&seqNumber={seqNumber}"
     const msg = Object.assign({}, msg0); // Clone the message
     if (!msg.id)
         throw new Error('missing_device');
@@ -36,17 +35,6 @@ function composeRequest(msg0) {
     if (!msg.data)
         msg.data = '00';
     return msg;
-    /*
-    return config.callbackURL
-      .split('{tag}').join(msg.tag || '')
-      .split('{device}').join(msg.id)
-      .split('{data}').join(msg.data || '00')
-      .split('{snr}').join(msg.snr || 0)
-      .split('{station}').join(msg.station || '0000')
-      .split('{avgSnr}').join(msg.avgSnr || 0)
-      .split('{rssi}').join(msg.rssi || -88)
-      .split('{seqNumber}').join(msg.seqNumber || 0);
-      */
     /*
     `
   # TYPE button_pressed counter
@@ -72,15 +60,17 @@ function sendStatus(unabellID0, seqNumber) {
     }
     if (!tag)
         return Promise.resolve('unknown_id');
+    /*
     //  Status object to be sent.
     const obj = {
-        values: [
-            { key: 'button_pressed', value: tag,
-                geo: { lat: 1, long: 104 } },
-            { key: 'presses', value: 1 },
-            { key: tag, value: 1 },
-        ]
+      values: [
+        {key: 'button_pressed', value: tag,
+          geo: { lat: 1, long: 104 }},
+        {key: 'presses', value: 1},
+        {key: tag, value: 1},
+      ]
     };
+    */
     //  Compose the thethings.io URL for sending the event.
     const msg = composeRequest({ tag, id: unabellID, seqNumber });
     const url = config.callbackURL;
