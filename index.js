@@ -17,20 +17,36 @@ const allUnaBells = {
 } */
 const config = require('./config.json');
 const axios = require('axios');
-function composeRequest(msg) {
-    // Compose the HTTP GET request to send the Sigfox message to thethings.io.  This calls the Cloud Function sigfox_parser.
+function composeRequest(msg0) {
+    // Compose the HTTP POST request body to send the Sigfox message to thethings.io.  This calls the Cloud Function sigfox_parser.
     // callbackURL looks like "https://subscription.thethings.io/sgfx/?????/??????id={device}&data={data}&snr={snr}&station={station}&avgSnr={avgSnr}&rssi={rssi}&seqNumber={seqNumber}"
-    if (!msg.device)
+    const msg = Object.assign({}, msg0); // Clone the message
+    if (!msg.id)
         throw new Error('missing_device');
+    if (!msg.avgSnr)
+        msg.avgSnr = 0;
+    if (!msg.seqNumber)
+        msg.seqNumber = 0;
+    if (!msg.rssi)
+        msg.rssi = 0;
+    if (!msg.station)
+        msg.station = '0000';
+    if (!msg.snr)
+        msg.snr = 0;
+    if (!msg.data)
+        msg.data = '00';
+    return msg;
+    /*
     return config.callbackURL
-        .split('{tag}').join(msg.tag || '')
-        .split('{device}').join(msg.device)
-        .split('{data}').join(msg.data || '00')
-        .split('{snr}').join(msg.snr || 0)
-        .split('{station}').join(msg.station || '0000')
-        .split('{avgSnr}').join(msg.avgSnr || 0)
-        .split('{rssi}').join(msg.rssi || -88)
-        .split('{seqNumber}').join(msg.seqNumber || 0);
+      .split('{tag}').join(msg.tag || '')
+      .split('{device}').join(msg.id)
+      .split('{data}').join(msg.data || '00')
+      .split('{snr}').join(msg.snr || 0)
+      .split('{station}').join(msg.station || '0000')
+      .split('{avgSnr}').join(msg.avgSnr || 0)
+      .split('{rssi}').join(msg.rssi || -88)
+      .split('{seqNumber}').join(msg.seqNumber || 0);
+      */
     /*
     `
   # TYPE button_pressed counter
@@ -66,10 +82,12 @@ function sendStatus(unabellID0, seqNumber) {
         ]
     };
     //  Compose the thethings.io URL for sending the event.
-    const url = composeRequest({ tag, device: unabellID, seqNumber });
+    const msg = composeRequest({ tag, id: unabellID, seqNumber });
+    const url = config.callbackURL;
     //  Send the event.
-    return axios.post(url, { timestamp: Date.now() })
-        .then(result => {
+    return axios.post(url, msg)
+        .then(res => {
+        const result = res.data;
         console.log(unabellID, tag, { result });
         return result;
     })
