@@ -35,6 +35,6 @@ function trigger(params, callback) {
 }
 function findParam(params, key) {
     //
-    params.values.find(val => (val.key === key));
+    return params.values.find(val => (val.key === key));
 }
 //# sourceMappingURL=process_tracker_message.js.map
