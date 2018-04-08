@@ -16,11 +16,34 @@ const allUnaBells = {
   "geolocationURL": "https://subscription.thethings.io/sgfx/geo/?????/??????id={device}&lat={lat}&lng={lng}&radius={radius}"
 } */
 const config = require('./config.json');
-const allClientsByTag = {}; //  Maps tag to the thethings client
-const allClientsByID = {}; //  Maps UnaBell ID to the thethings client
-const allTagsByID = {}; //  Maps UnaBell ID to the tag
-const theThingsAPI = require("thethingsio-api");
-function sendStatus(unabellID0) {
+const axios = require('axios');
+function composeRequest(msg) {
+    // Compose the HTTP GET request to send the Sigfox message to thethings.io.  This calls the Cloud Function sigfox_parser.
+    // callbackURL looks like "https://subscription.thethings.io/sgfx/?????/??????id={device}&data={data}&snr={snr}&station={station}&avgSnr={avgSnr}&rssi={rssi}&seqNumber={seqNumber}"
+    if (!msg.device)
+        throw new Error('missing_device');
+    return config.callbackURL
+        .split('{tag}').join(msg.tag || '')
+        .split('{device}').join(msg.device)
+        .split('{data}').join(msg.data || '00')
+        .split('{snr}').join(msg.snr || 0)
+        .split('{station}').join(msg.station || '0000')
+        .split('{avgSnr}').join(msg.avgSnr || 0)
+        .split('{rssi}').join(msg.rssi || -88)
+        .split('{seqNumber}').join(msg.seqNumber || 0);
+    /*
+    `
+  # TYPE button_pressed counter
+  # HELP button_pressed Cumulative number of button presses by label: excellent, goodjob, fair, poor
+  
+  button_pressed{label="excellent"} 10
+  button_pressed{label="goodjob"} 24
+  button_pressed{label="fair"} 39
+  button_pressed{label="poor"} 5
+  `;
+  */
+}
+function sendStatus(unabellID0, seqNumber) {
     //  Send the UnaBell status to thethings cloud via callbackURL specified in config.json. Returns a promise.
     if (!unabellID0)
         return Promise.resolve('missing_id');
@@ -42,56 +65,39 @@ function sendStatus(unabellID0) {
             { key: tag, value: 1 },
         ]
     };
-    //  Send the data.
-    return new Promise((resolve, reject) => client.thingWrite(obj, (error, data) => error ? reject(error) : resolve(data)))
+    //  Compose the thethings.io URL for sending the event.
+    const url = composeRequest({ tag, device: unabellID, seqNumber });
+    //  Send the event.
+    return axios.post(url, { timestamp: Date.now() })
         .then(result => {
         console.log(unabellID, tag, { result });
         return result;
     })
         .catch(error => {
-        console.error(unabellID, tag, error.message, error.stack);
+        if (error.response) {
+            // The request was made and the server responded with a status code
+            // that falls out of the range of 2xx
+            console.error(unabellID, tag, url, error.response.data, error.response.status, error.response.headers);
+        }
+        else if (error.request) {
+            // The request was made but no response was received
+            // `error.request` is an instance of XMLHttpRequest in the browser and an instance of
+            // http.ClientRequest in node.js
+            console.error(unabellID, tag, url, error.request);
+        }
+        else {
+            // Something happened in setting up the request that triggered an Error
+            console.error(unabellID, tag, url, error.message, error.stack);
+        }
         throw error;
     });
 }
 exports.sendStatus = sendStatus;
-Object.keys(allUnaBells).forEach(tag => {
-    //  Upon startup, open a connection for each UnaBell.
-    const { id, token } = allUnaBells[tag];
-    allTagsByID[id] = tag;
-    const configFile = id + '.json';
-    //  Use the token if provided. Else use the config file.
-    const config = token
-        ? { thingToken: token }
-        : configFile;
-    //  Connect to thethings.io.
-    const client = theThingsAPI.createSecureClient(config);
-    client.on('error', function (error) {
-        //  Show a message on error.
-        console.error(id, tag, error.message, error.stack);
-    });
-    client.on('ready', function () {
-        //  Upon connecting, save the connection so we can send data later.
-        allClientsByTag[tag] = client;
-        allClientsByID[id] = client;
-        //  For development: Send the test status upon connection.
-        if (process.env.NODE_ENV !== 'production') {
-            sendStatus(id);
-        }
-    });
-});
 //  For development: Send the test status randomly every 10 seconds.
 if (process.env.NODE_ENV !== 'production') {
+    let lastSeqNumber = 0;
     setInterval(() => {
-        if (Object.keys(allClientsByID).length < Object.keys(allUnaBells).length)
-            return; //  Not ready yet.
-        sendStatus('random');
+        sendStatus('random', lastSeqNumber++);
     }, 10 * 1000);
 }
-/* client.thingRead('temperature', {limit:1}, function (error, data) {
-  if (error) {
-    console.error(error.message, error.stack);
-    return error;
-  }
-  console.log({ data });
-}); */
 //# sourceMappingURL=index.js.map
