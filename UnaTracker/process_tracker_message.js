@@ -1,3 +1,4 @@
+"use strict";
 //  Save the MAC Address and WiFi RSSI if different from last save.
 //  If we have 2 different MAC Addresses, call the geolocation API.
 /*
@@ -12,24 +13,28 @@
    callback: is a function to be called when the trigger ends can contain a
        parameter string *error* if the trigger needs to report an error.
 */
-
-function trigger(params, callback){
-  if (params.action !== 'write') return callback(null);  //  Ignore reads, handle only writes.
-  //  If macAddress or wifiRSSI fields not found, exit.
-  const macAddressEntry = params.values.find(val => val.key === 'macAddress');
-  const wifiRSSIEntry = params.values.find(val => val.key === 'wifiRSSI');
-  if (!macAddressEntry || !wifiRSSIEntry) return callback(null);
-
-  console.log(['*** process_tracker_message start', new Date().toISOString(), JSON.stringify({ params }, null, 2)].join('-'.repeat(5)));
-  //  Call save_wifi cloud function to save the wifi point and compute wifi geolocation.
-  thethingsAPI.cloudFunction('save_wifi', params, (error, result) => {
-    if (error) {
-      console.error('*** process_tracker_message error', error.message, error.stack);
-      return callback(null); // Don't propagate error to caller.
-    }
-    console.log(['*** process_tracker_message OK', new Date().toISOString(), JSON.stringify({ result, params }, null, 2)].join('-'.repeat(5)));
-  });
-
-  //  Don't wait for save_wifi to complete.
-  return callback(null);
+function trigger(params, callback) {
+    if (params.action !== 'write')
+        return callback(null); //  Ignore reads, handle only writes.
+    //  If macAddress or wifiRSSI fields not found, exit.
+    const macAddressEntry = params.values.find(val => val.key === 'macAddress');
+    const wifiRSSIEntry = params.values.find(val => val.key === 'wifiRSSI');
+    if (!macAddressEntry || !wifiRSSIEntry)
+        return callback(null);
+    console.log(['*** process_tracker_message start', new Date().toISOString(), JSON.stringify({ params }, null, 2)].join('-'.repeat(5)));
+    //  Call save_wifi cloud function to save the wifi point and compute wifi geolocation.
+    thethingsAPI.cloudFunction('save_wifi', params, (error, result) => {
+        if (error) {
+            console.error('*** process_tracker_message error', error.message, error.stack);
+            return callback(null); // Don't propagate error to caller.
+        }
+        console.log(['*** process_tracker_message OK', new Date().toISOString(), JSON.stringify({ result, params }, null, 2)].join('-'.repeat(5)));
+    });
+    //  Don't wait for save_wifi to complete.
+    return callback(null);
 }
+function findParam(params, key) {
+    //
+    params.values.find(val => (val.key === key));
+}
+//# sourceMappingURL=process_tracker_message.js.map
