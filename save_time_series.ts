@@ -56,9 +56,19 @@ function main(params, callback) {
         return callback(null, error.message); // Don't propagate error to caller.
       }
 
-      //  Send the updated count to Prometheus.
-      console.log(['*** save_time_series OK', new Date().toISOString(), JSON.stringify({ result }, null, 2)].join('-'.repeat(5)));
-      return callback(null, result);
+      //  Send the updated count to Prometheus through cloud function send_time_series.
+      const sendParams = {
+        label,
+        count: value,
+      };
+      thethingsAPI.cloudFunction('send_time_series', sendParams, (error, result) => {
+        if (error) {
+          console.error('*** save_time_series error', error.message, error.stack);
+          return callback(null, error.message); // Don't propagate error to caller.
+        }
+        console.log(['*** save_time_series OK', new Date().toISOString(), JSON.stringify({ result, sendParams }, null, 2)].join('-'.repeat(5)));
+        return callback(null, result);
+      });
     });
   });
 
