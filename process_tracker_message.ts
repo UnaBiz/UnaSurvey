@@ -28,7 +28,7 @@ function trigger(params, callback){
   thethingsAPI.cloudFunction(cloudFunc, params, (error, result) => {
     if (error) {
       console.error('*** process_tracker_message error', error.message, error.stack);
-      return callback(null); // Don't propagate error to caller.
+      return;
     }
     console.log(['*** process_tracker_message OK', new Date().toISOString(), JSON.stringify({ result, cloudFunc, params }, null, 2)].join('-'.repeat(5)));
   });
