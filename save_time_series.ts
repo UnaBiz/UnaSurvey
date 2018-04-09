@@ -32,7 +32,7 @@ function main(params, callback) {
   console.log(['*** save_time_series start', new Date().toISOString(), JSON.stringify({ params }, null, 2)].join('-'.repeat(5)));
   const thingToken = params.thingToken;
   const labelEntry = findParam(params, 'label');
-  if (!labelEntry) return callback(null, 'missing_labelEntry');
+  if (!labelEntry) return callback(null, 'missing_label');
   const label = labelEntry.value;
 
   //  Get the last count from thing state.
