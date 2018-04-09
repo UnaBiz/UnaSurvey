@@ -3,9 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="0bfbdbb9-79be-439b-a32c-ecdd21e3bd76" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/process_tracker_message.js" afterPath="$PROJECT_DIR$/process_tracker_message.js" />
-      <change beforePath="$PROJECT_DIR$/process_tracker_message.js.map" afterPath="$PROJECT_DIR$/process_tracker_message.js.map" />
-      <change beforePath="$PROJECT_DIR$/process_tracker_message.ts" afterPath="$PROJECT_DIR$/process_tracker_message.ts" />
       <change beforePath="$PROJECT_DIR$/save_time_series.js" afterPath="$PROJECT_DIR$/save_time_series.js" />
       <change beforePath="$PROJECT_DIR$/save_time_series.js.map" afterPath="$PROJECT_DIR$/save_time_series.js.map" />
       <change beforePath="$PROJECT_DIR$/save_time_series.ts" afterPath="$PROJECT_DIR$/save_time_series.ts" />
@@ -31,11 +28,21 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="save_time_series.ts" pinned="false" current-in-tab="false">
+      <file leaf-file-name="index.ts" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/index.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="280">
+              <caret line="18" column="0" lean-forward="true" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="save_time_series.ts" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/save_time_series.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <state relative-caret-position="663">
+              <caret line="66" column="0" lean-forward="false" selection-start-line="66" selection-start-column="0" selection-end-line="66" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -44,8 +51,8 @@
       <file leaf-file-name="send_time_series.ts" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/send_time_series.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="60">
-              <caret line="3" column="0" lean-forward="true" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
+            <state relative-caret-position="815">
+              <caret line="57" column="0" lean-forward="false" selection-start-line="57" selection-start-column="0" selection-end-line="57" selection-end-column="0" />
               <folding>
                 <element signature="n#!!doc" expanded="true" />
               </folding>
@@ -53,41 +60,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="sigfox_parser.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/sigfox_parser.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="660">
-              <caret line="33" column="0" lean-forward="false" selection-start-line="33" selection-start-column="0" selection-end-line="33" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="process_tracker_message.ts" pinned="false" current-in-tab="true">
+      <file leaf-file-name="process_tracker_message.ts" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/process_tracker_message.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="process_tracker_message.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/process_tracker_message.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="300">
-              <caret line="15" column="2" lean-forward="true" selection-start-line="15" selection-start-column="2" selection-end-line="15" selection-end-column="2" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="config.json" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/config.json">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="80">
-              <caret line="4" column="0" lean-forward="false" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
+            <state relative-caret-position="60">
+              <caret line="3" column="2" lean-forward="true" selection-start-line="3" selection-start-column="2" selection-end-line="3" selection-end-column="2" />
               <folding />
             </state>
           </provider>
@@ -108,6 +85,7 @@
     <findStrings>
       <find>tag</find>
       <find>geolocate_wifi</find>
+      <find>label</find>
     </findStrings>
     <replaceStrings>
       <replace>label</replace>
@@ -144,9 +122,9 @@
         <option value="$PROJECT_DIR$/send_time_series.js" />
         <option value="$PROJECT_DIR$/save_time_series.js" />
         <option value="$PROJECT_DIR$/process_tracker_message.js" />
+        <option value="$PROJECT_DIR$/process_tracker_message.ts" />
         <option value="$PROJECT_DIR$/send_time_series.ts" />
         <option value="$PROJECT_DIR$/save_time_series.ts" />
-        <option value="$PROJECT_DIR$/process_tracker_message.ts" />
       </list>
     </option>
   </component>
@@ -411,7 +389,7 @@
       <workItem from="1522631084472" duration="10123000" />
       <workItem from="1522717719001" duration="7429000" />
       <workItem from="1523006174446" duration="5158000" />
-      <workItem from="1523044849660" duration="12779000" />
+      <workItem from="1523044849660" duration="14307000" />
     </task>
     <task id="LOCAL-00001" summary="First version">
       <created>1522222114649</created>
@@ -651,11 +629,18 @@
       <option name="project" value="LOCAL" />
       <updated>1523246813495</updated>
     </task>
-    <option name="localTasksCounter" value="35" />
+    <task id="LOCAL-00035" summary="Send counter to Prometheus">
+      <created>1523256101922</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1523256101922</updated>
+    </task>
+    <option name="localTasksCounter" value="36" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="55425000" />
+    <option name="totallyTimeSpent" value="56953000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-358" y="-1275" width="1467" height="1275" extended-state="0" />
@@ -1012,16 +997,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/index.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="200">
-          <caret line="10" column="19" lean-forward="false" selection-start-line="10" selection-start-column="19" selection-end-line="10" selection-end-column="19" />
-          <folding>
-            <element signature="n#!!doc" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/config.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="80">
@@ -1109,22 +1084,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/sigfox_parser.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="660">
-          <caret line="33" column="0" lean-forward="false" selection-start-line="33" selection-start-column="0" selection-end-line="33" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/save_time_series.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="719">
-          <caret line="40" column="9" lean-forward="true" selection-start-line="40" selection-start-column="9" selection-end-line="40" selection-end-column="9" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/process_tracker_message.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="300">
@@ -1133,36 +1092,60 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/send_time_series.js">
+    <entry file="file://$PROJECT_DIR$/process_tracker_message.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="60">
-          <caret line="3" column="36" lean-forward="true" selection-start-line="3" selection-start-column="36" selection-end-line="3" selection-end-column="36" />
+          <caret line="3" column="2" lean-forward="true" selection-start-line="3" selection-start-column="2" selection-end-line="3" selection-end-column="2" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/save_time_series.ts">
+    <entry file="file://$PROJECT_DIR$/sigfox_parser.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state relative-caret-position="660">
+          <caret line="33" column="0" lean-forward="false" selection-start-line="33" selection-start-column="0" selection-end-line="33" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="280">
+          <caret line="18" column="0" lean-forward="true" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/send_time_series.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="420">
+          <caret line="21" column="18" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="58" selection-end-column="44" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/send_time_series.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="3" column="0" lean-forward="true" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
+        <state relative-caret-position="815">
+          <caret line="57" column="0" lean-forward="false" selection-start-line="57" selection-start-column="0" selection-end-line="57" selection-end-column="0" />
           <folding>
             <element signature="n#!!doc" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/process_tracker_message.ts">
+    <entry file="file://$PROJECT_DIR$/save_time_series.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state relative-caret-position="219">
+          <caret line="15" column="7" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="78" selection-end-column="44" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/save_time_series.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="663">
+          <caret line="66" column="0" lean-forward="false" selection-start-line="66" selection-start-column="0" selection-end-line="66" selection-end-column="0" />
           <folding />
         </state>
       </provider>

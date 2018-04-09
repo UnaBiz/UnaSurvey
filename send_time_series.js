@@ -50,7 +50,7 @@ function main(params, callback) {
     return sendCounter(label, count, (error, result) => {
         if (error) {
             console.error('*** send_time_series error', error.message, error.stack);
-            return callback(null, error.message); // Don't propagate error to caller.
+            return callback(error);
         }
         console.log(['*** send_time_series OK', new Date().toISOString(), JSON.stringify({ result, params }, null, 2)].join('-'.repeat(5)));
         return callback(null, result);

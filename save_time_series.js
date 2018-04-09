@@ -32,8 +32,10 @@ function main(params, callback) {
     const thingToken = params.thingToken;
     const labelEntry = findParam(params, 'label');
     if (!labelEntry)
-        return callback(null, 'missing_label');
+        return callback(new Error('missing_label'));
     const label = labelEntry.value;
+    if (!label)
+        return callback(new Error('missing_label_value'));
     //  Get the last count from thing state.
     const key = 'count';
     return recallThingState(thingToken, key, (error, result) => {
