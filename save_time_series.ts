@@ -1,4 +1,6 @@
 //  Save the time series data point to Prometheus for easy generation of time series KPI
+var exports = {}; //  Needed for ES support.
+
 import {Param} from "./process_tracker_message";
 
 function saveThingState(thingToken: string, key: string, value, callback) {

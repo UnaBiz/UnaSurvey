@@ -1,5 +1,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
+//  Save the time series data point to Prometheus for easy generation of time series KPI
+var exports = {}; //  Needed for ES support.
 function saveThingState(thingToken, key, value, callback) {
     const values = [
         { key, value }

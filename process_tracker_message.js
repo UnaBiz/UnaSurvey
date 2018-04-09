@@ -1,5 +1,7 @@
 "use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 //  When a device message is received, either save the MAC Address and WiFi RSSI, or save the time series data to Prometheus.
+var exports = {}; //  Needed for ES support.
 /*
    params: is an object with the keys:
     - action: one of 'write' | 'read'
@@ -12,7 +14,6 @@
    callback: is a function to be called when the trigger ends can contain a
        parameter string *error* if the trigger needs to report an error.
 */
-Object.defineProperty(exports, "__esModule", { value: true });
 function trigger(params, callback) {
     if (params.action !== 'write')
         return callback(null); //  Ignore reads, handle only writes.
@@ -20,17 +21,17 @@ function trigger(params, callback) {
     //  If this is a WiFi Tracker message, save the WiFi MAC Address and WiFi RSSI by calling cloud function save_wifi.
     if (findParam(params, 'macAddress'))
         cloudFunc = 'save_wifi';
-    else if (findParam(params, 'macAddress'))
+    else if (findParam(params, 'label'))
         cloudFunc = 'save_time_series';
+    console.log(['*** process_tracker_message start', new Date().toISOString(), JSON.stringify({ cloudFunc, params }, null, 2)].join('-'.repeat(5)));
     //  If nothing to do, quit.
     if (!cloudFunc)
         return callback(null);
-    console.log(['*** process_tracker_message start', new Date().toISOString(), JSON.stringify({ cloudFunc, params }, null, 2)].join('-'.repeat(5)));
     //  Call cloud function to save the wifi point or save time series data.
     thethingsAPI.cloudFunction(cloudFunc, params, (error, result) => {
         if (error) {
             console.error('*** process_tracker_message error', error.message, error.stack);
-            return callback(null); // Don't propagate error to caller.
+            return;
         }
         console.log(['*** process_tracker_message OK', new Date().toISOString(), JSON.stringify({ result, cloudFunc, params }, null, 2)].join('-'.repeat(5)));
     });

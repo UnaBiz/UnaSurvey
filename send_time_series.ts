@@ -1,5 +1,6 @@
 //  Save the time series data point to Prometheus for easy generation of time series KPI
 //  We send to Prometheus Push Gateway, which is polled by the Prometheus server for metrics.
+var exports = {}; //  Needed for ES support.
 
 function sendCounter(label, count, callback) {
   //  Send label and counter value to Prometheus Push Gateway via HTTP POST.
@@ -14,7 +15,7 @@ function sendCounter(label, count, callback) {
   ].join('\n') + '\n';
 
   const req = {
-    host: YOUR_HOST,
+    host: 'us-central1-unabiz-unaops.cloudfunctions.net',
     path: `/sendTimeSeriesToPrometheus?job=${job}&instance=${instance}`,
     port: 443,
     method: 'POST',
