@@ -18,7 +18,7 @@ function trigger(params, callback){
   //  If this is a WiFi Tracker message, save the WiFi MAC Address and WiFi RSSI by calling cloud function save_wifi.
   if (findParam(params, 'macAddress')) cloudFunc = 'save_wifi';
   //  If this is a UnaSurvey UnaBell message, save the label to Prometheus by calling cloud function save_time_series.
-  else if (findParam(params, 'macAddress')) cloudFunc = 'save_time_series';
+  else if (findParam(params, 'label')) cloudFunc = 'save_time_series';
 
   //  If nothing to do, quit.
   if (!cloudFunc) return callback(null);
