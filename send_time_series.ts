@@ -16,7 +16,7 @@ function sendCounter(label, count, callback) {
   ].join('\n') + '\n';
 
   const req = {
-    host: 'us-central1-unabiz-unaops.cloudfunctions.net',
+    host: 'us-central1-' + YOUR_GOOGLE_PROJECT_ID + '.cloudfunctions.net',
     path: `/sendTimeSeriesToPrometheus?job=${job}&instance=${instance}`,
     port: 443,
     method: 'POST',
