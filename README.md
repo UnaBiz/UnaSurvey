@@ -73,7 +73,7 @@ button_presses_total{instance="excellent",job="job2"}	174
 
 Historical values are shown in the chart of the Prometheus UI, not in the table.
 
-#### Incremental number of button presses for the past 5 mins
+#### How many times has each button been pressed for the past 5 mins
 
 Query:
 ```
