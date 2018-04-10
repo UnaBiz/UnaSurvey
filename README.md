@@ -89,6 +89,43 @@ Element	Value
 {instance="poor",job="job2"}	3
 ```
 
+## Prometheus Configuration
+
+`prometheus.yml`:
+```yaml
+# Global config settings
+global:
+  scrape_interval:     5s # Set the scrape interval to every 5 seconds. Default is every 1 minute.
+  evaluation_interval: 5s # Evaluate rules every 5 seconds. The default is every 1 minute.
+  # scrape_timeout is set to the global default (10s).
+
+# Periodically evaluate these rules for alerting and recording metrics according to the global 'evaluation_interval'.
+rule_files:
+  - rules.yml
+
+# Alertmanager sends alerts to thethings.io when the above rules are satisfied
+alerting:
+  alertmanagers:
+  - static_configs:
+    - targets: ['YOUR_PROMETHEUS_ALERTMANAGER:80']
+
+# Scrape configuration for gathering Prometheus metrics.  Prometheus scrapes HTTP websites and collects metrics from '/metrics' by default.
+scrape_configs:
+
+  # Scrape Prometheus itself, for testing. The job name is added as a label `job=<job_name>` to any timeseries scraped from this config.
+  - job_name: 'prometheus'
+    static_configs:
+    - targets: ['localhost:8080'] # On Google AppEngine, our Prometheus must run on port 8080
+
+  # Scrape the Push Gateway, which contains metrics pushed by thethings.io via the send_time_series Cloud Function.
+  - job_name: 'pushgateway'
+    scheme: https
+    metrics_path: /metrics
+    honor_labels: true
+    static_configs:
+    - targets: ['YOUR_PROMETHEUS_PUSHGATEWAY:443']
+```
+
 ## Other Components
 
 #### `sendTimeSeriesToPrometheus`

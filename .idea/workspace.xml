@@ -49,27 +49,49 @@
         <entry file="file://$PROJECT_DIR$/README.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
-              <first_editor relative-caret-position="811">
-                <caret line="163" column="0" lean-forward="true" selection-start-line="163" selection-start-column="0" selection-end-line="163" selection-end-column="0" />
+              <first_editor relative-caret-position="-11">
+                <caret line="92" column="0" lean-forward="true" selection-start-line="92" selection-start-column="0" selection-end-line="92" selection-end-column="0" />
                 <folding>
-                  <marker date="1523331988000" expanded="true" signature="4032:4291" ph="{&quot;host&quot;: 'us-central1-&lt;&lt;YOUR_GOOGLE_PROJECT_ID&gt;&gt;.cloudfunctions.net'...}" />
-                  <marker date="1523331988000" expanded="true" signature="4244:4287" ph="{&quot;Content-Type&quot;: 'text/plain'...}" />
-                  <marker date="1523331988000" expanded="true" signature="4430:5250" ph="{...}" />
-                  <marker date="1523331988000" expanded="true" signature="4591:4797" ph="{&quot;method&quot;: &quot;POST&quot;...}" />
-                  <marker date="1523331988000" expanded="true" signature="4723:4795" ph="{&quot;Content-Type&quot;: &quot;text/plain&quot;...}" />
-                  <marker date="1523331988000" expanded="true" signature="4875:5111" ph="{...}" />
-                  <marker date="1523331988000" expanded="true" signature="4932:4961" ph="{...}" />
-                  <marker date="1523331988000" expanded="true" signature="4994:5107" ph="{...}" />
-                  <marker date="1523331988000" expanded="true" signature="5139:5197" ph="{...}" />
-                  <marker date="1523331988000" expanded="true" signature="6188:7117" ph="{...}" />
-                  <marker date="1523331988000" expanded="true" signature="6312:6613" ph="{&quot;method&quot;: &quot;POST&quot;...}" />
-                  <marker date="1523331988000" expanded="true" signature="6348:6390" ph="[...]" />
-                  <marker date="1523331988000" expanded="true" signature="6412:6508" ph="[...]" />
-                  <marker date="1523331988000" expanded="true" signature="6533:6611" ph="{&quot;Content-Type&quot;: &quot;application/json&quot;...}" />
-                  <marker date="1523331988000" expanded="true" signature="6691:6946" ph="{...}" />
-                  <marker date="1523331988000" expanded="true" signature="6748:6777" ph="{...}" />
-                  <marker date="1523331988000" expanded="true" signature="6810:6942" ph="{...}" />
-                  <marker date="1523331988000" expanded="true" signature="6974:7047" ph="{...}" />
+                  <marker date="1523365660000" expanded="true" signature="3608:3740" ph="global: &lt;2 keys&gt;" />
+                  <marker date="1523365660000" expanded="true" signature="3639:3641" ph="5s" />
+                  <marker date="1523365660000" expanded="true" signature="3738:3740" ph="5s" />
+                  <marker date="1523365660000" expanded="true" signature="3980:4005" ph="rule_files: &lt;1 item&gt;" />
+                  <marker date="1523365660000" expanded="true" signature="3996:4005" ph="rules.yml" />
+                  <marker date="1523365660000" expanded="true" signature="4086:4183" ph="alerting: &lt;1 key&gt;" />
+                  <marker date="1523365660000" expanded="true" signature="4098:4183" ph="alertmanagers: &lt;1 item&gt;" />
+                  <marker date="1523365660000" expanded="true" signature="4117:4183" ph="static_configs: &lt;1 item&gt;" />
+                  <marker date="1523365660000" expanded="true" signature="4139:4183" ph="targets: [1 item]" />
+                  <marker date="1523365660000" expanded="true" signature="4149:4182" ph="YOUR_PROMETHEUS_S:80" />
+                  <marker date="1523365660000" expanded="true" signature="4325:4903" ph="scrape_configs: &lt;2 items&gt;" />
+                  <marker date="1523365660000" expanded="true" signature="4493:4505" ph="prometheus" />
+                  <marker date="1523365660000" expanded="true" signature="4510:4559" ph="static_configs: &lt;1 item&gt;" />
+                  <marker date="1523365660000" expanded="true" signature="4532:4559" ph="targets: [1 item]" />
+                  <marker date="1523365660000" expanded="true" signature="4542:4558" ph="localhost:8080" />
+                  <marker date="1523365660000" expanded="true" signature="4751:4764" ph="pushgateway" />
+                  <marker date="1523365660000" expanded="true" signature="4777:4782" ph="https" />
+                  <marker date="1523365660000" expanded="true" signature="4801:4809" ph="/metrics" />
+                  <marker date="1523365660000" expanded="true" signature="4828:4832" ph="true" />
+                  <marker date="1523365660000" expanded="true" signature="4837:4903" ph="static_configs: &lt;1 item&gt;" />
+                  <marker date="1523365660000" expanded="true" signature="4859:4903" ph="targets: [1 item]" />
+                  <marker date="1523365660000" expanded="true" signature="4869:4902" ph="prometheu…ot.com:443" />
+                  <marker date="1523365660000" expanded="true" signature="5413:5672" ph="{&quot;host&quot;: 'us-central1-&lt;&lt;YOUR_GOOGLE_PROJECT_ID&gt;&gt;.cloudfunctions.net'...}" />
+                  <marker date="1523365660000" expanded="true" signature="5625:5668" ph="{&quot;Content-Type&quot;: 'text/plain'...}" />
+                  <marker date="1523365660000" expanded="true" signature="5811:6631" ph="{...}" />
+                  <marker date="1523365660000" expanded="true" signature="5972:6178" ph="{&quot;method&quot;: &quot;POST&quot;...}" />
+                  <marker date="1523365660000" expanded="true" signature="6104:6176" ph="{&quot;Content-Type&quot;: &quot;text/plain&quot;...}" />
+                  <marker date="1523365660000" expanded="true" signature="6256:6492" ph="{...}" />
+                  <marker date="1523365660000" expanded="true" signature="6313:6342" ph="{...}" />
+                  <marker date="1523365660000" expanded="true" signature="6375:6488" ph="{...}" />
+                  <marker date="1523365660000" expanded="true" signature="6520:6578" ph="{...}" />
+                  <marker date="1523365660000" expanded="true" signature="7569:8498" ph="{...}" />
+                  <marker date="1523365660000" expanded="true" signature="7693:7994" ph="{&quot;method&quot;: &quot;POST&quot;...}" />
+                  <marker date="1523365660000" expanded="true" signature="7729:7771" ph="[...]" />
+                  <marker date="1523365660000" expanded="true" signature="7793:7889" ph="[...]" />
+                  <marker date="1523365660000" expanded="true" signature="7914:7992" ph="{&quot;Content-Type&quot;: &quot;application/json&quot;...}" />
+                  <marker date="1523365660000" expanded="true" signature="8072:8327" ph="{...}" />
+                  <marker date="1523365660000" expanded="true" signature="8129:8158" ph="{...}" />
+                  <marker date="1523365660000" expanded="true" signature="8191:8323" ph="{...}" />
+                  <marker date="1523365660000" expanded="true" signature="8355:8428" ph="{...}" />
                 </folding>
               </first_editor>
               <second_editor />
@@ -167,10 +189,9 @@
     <handled-path value="$PROJECT_DIR$/node_modules" />
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="-410" />
-    <option name="y" value="-1351" />
-    <option name="width" value="2369" />
-    <option name="height" value="1275" />
+    <option name="y" value="22" />
+    <option name="width" value="1680" />
+    <option name="height" value="968" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
@@ -392,7 +413,7 @@
       <workItem from="1522631084472" duration="10123000" />
       <workItem from="1522717719001" duration="7429000" />
       <workItem from="1523006174446" duration="5158000" />
-      <workItem from="1523044849660" duration="21226000" />
+      <workItem from="1523044849660" duration="22307000" />
     </task>
     <task id="LOCAL-00001" summary="First version">
       <created>1522222114649</created>
@@ -681,18 +702,25 @@
       <option name="project" value="LOCAL" />
       <updated>1523331888859</updated>
     </task>
-    <option name="localTasksCounter" value="42" />
+    <task id="LOCAL-00042" summary="Updated readme">
+      <created>1523332027912</created>
+      <option name="number" value="00042" />
+      <option name="presentableId" value="LOCAL-00042" />
+      <option name="project" value="LOCAL" />
+      <updated>1523332027912</updated>
+    </task>
+    <option name="localTasksCounter" value="43" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="63872000" />
+    <option name="totallyTimeSpent" value="64953000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-410" y="-1351" width="2369" height="1275" extended-state="0" />
+    <frame x="0" y="22" width="1680" height="968" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="TypeScript" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.30227596" sideWeight="0.5" order="19" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.13107005" sideWeight="0.64705884" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.18620269" sideWeight="0.64705884" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32843894" sideWeight="0.58600736" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Regex Tester" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="15" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.23497267" sideWeight="0.5018125" order="0" side_tool="true" content_ui="tabs" />
@@ -1190,27 +1218,49 @@
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
-          <first_editor relative-caret-position="811">
-            <caret line="163" column="0" lean-forward="true" selection-start-line="163" selection-start-column="0" selection-end-line="163" selection-end-column="0" />
+          <first_editor relative-caret-position="-11">
+            <caret line="92" column="0" lean-forward="true" selection-start-line="92" selection-start-column="0" selection-end-line="92" selection-end-column="0" />
             <folding>
-              <marker date="1523331988000" expanded="true" signature="4032:4291" ph="{&quot;host&quot;: 'us-central1-&lt;&lt;YOUR_GOOGLE_PROJECT_ID&gt;&gt;.cloudfunctions.net'...}" />
-              <marker date="1523331988000" expanded="true" signature="4244:4287" ph="{&quot;Content-Type&quot;: 'text/plain'...}" />
-              <marker date="1523331988000" expanded="true" signature="4430:5250" ph="{...}" />
-              <marker date="1523331988000" expanded="true" signature="4591:4797" ph="{&quot;method&quot;: &quot;POST&quot;...}" />
-              <marker date="1523331988000" expanded="true" signature="4723:4795" ph="{&quot;Content-Type&quot;: &quot;text/plain&quot;...}" />
-              <marker date="1523331988000" expanded="true" signature="4875:5111" ph="{...}" />
-              <marker date="1523331988000" expanded="true" signature="4932:4961" ph="{...}" />
-              <marker date="1523331988000" expanded="true" signature="4994:5107" ph="{...}" />
-              <marker date="1523331988000" expanded="true" signature="5139:5197" ph="{...}" />
-              <marker date="1523331988000" expanded="true" signature="6188:7117" ph="{...}" />
-              <marker date="1523331988000" expanded="true" signature="6312:6613" ph="{&quot;method&quot;: &quot;POST&quot;...}" />
-              <marker date="1523331988000" expanded="true" signature="6348:6390" ph="[...]" />
-              <marker date="1523331988000" expanded="true" signature="6412:6508" ph="[...]" />
-              <marker date="1523331988000" expanded="true" signature="6533:6611" ph="{&quot;Content-Type&quot;: &quot;application/json&quot;...}" />
-              <marker date="1523331988000" expanded="true" signature="6691:6946" ph="{...}" />
-              <marker date="1523331988000" expanded="true" signature="6748:6777" ph="{...}" />
-              <marker date="1523331988000" expanded="true" signature="6810:6942" ph="{...}" />
-              <marker date="1523331988000" expanded="true" signature="6974:7047" ph="{...}" />
+              <marker date="1523365660000" expanded="true" signature="3608:3740" ph="global: &lt;2 keys&gt;" />
+              <marker date="1523365660000" expanded="true" signature="3639:3641" ph="5s" />
+              <marker date="1523365660000" expanded="true" signature="3738:3740" ph="5s" />
+              <marker date="1523365660000" expanded="true" signature="3980:4005" ph="rule_files: &lt;1 item&gt;" />
+              <marker date="1523365660000" expanded="true" signature="3996:4005" ph="rules.yml" />
+              <marker date="1523365660000" expanded="true" signature="4086:4183" ph="alerting: &lt;1 key&gt;" />
+              <marker date="1523365660000" expanded="true" signature="4098:4183" ph="alertmanagers: &lt;1 item&gt;" />
+              <marker date="1523365660000" expanded="true" signature="4117:4183" ph="static_configs: &lt;1 item&gt;" />
+              <marker date="1523365660000" expanded="true" signature="4139:4183" ph="targets: [1 item]" />
+              <marker date="1523365660000" expanded="true" signature="4149:4182" ph="YOUR_PROMETHEUS_S:80" />
+              <marker date="1523365660000" expanded="true" signature="4325:4903" ph="scrape_configs: &lt;2 items&gt;" />
+              <marker date="1523365660000" expanded="true" signature="4493:4505" ph="prometheus" />
+              <marker date="1523365660000" expanded="true" signature="4510:4559" ph="static_configs: &lt;1 item&gt;" />
+              <marker date="1523365660000" expanded="true" signature="4532:4559" ph="targets: [1 item]" />
+              <marker date="1523365660000" expanded="true" signature="4542:4558" ph="localhost:8080" />
+              <marker date="1523365660000" expanded="true" signature="4751:4764" ph="pushgateway" />
+              <marker date="1523365660000" expanded="true" signature="4777:4782" ph="https" />
+              <marker date="1523365660000" expanded="true" signature="4801:4809" ph="/metrics" />
+              <marker date="1523365660000" expanded="true" signature="4828:4832" ph="true" />
+              <marker date="1523365660000" expanded="true" signature="4837:4903" ph="static_configs: &lt;1 item&gt;" />
+              <marker date="1523365660000" expanded="true" signature="4859:4903" ph="targets: [1 item]" />
+              <marker date="1523365660000" expanded="true" signature="4869:4902" ph="prometheu…ot.com:443" />
+              <marker date="1523365660000" expanded="true" signature="5413:5672" ph="{&quot;host&quot;: 'us-central1-&lt;&lt;YOUR_GOOGLE_PROJECT_ID&gt;&gt;.cloudfunctions.net'...}" />
+              <marker date="1523365660000" expanded="true" signature="5625:5668" ph="{&quot;Content-Type&quot;: 'text/plain'...}" />
+              <marker date="1523365660000" expanded="true" signature="5811:6631" ph="{...}" />
+              <marker date="1523365660000" expanded="true" signature="5972:6178" ph="{&quot;method&quot;: &quot;POST&quot;...}" />
+              <marker date="1523365660000" expanded="true" signature="6104:6176" ph="{&quot;Content-Type&quot;: &quot;text/plain&quot;...}" />
+              <marker date="1523365660000" expanded="true" signature="6256:6492" ph="{...}" />
+              <marker date="1523365660000" expanded="true" signature="6313:6342" ph="{...}" />
+              <marker date="1523365660000" expanded="true" signature="6375:6488" ph="{...}" />
+              <marker date="1523365660000" expanded="true" signature="6520:6578" ph="{...}" />
+              <marker date="1523365660000" expanded="true" signature="7569:8498" ph="{...}" />
+              <marker date="1523365660000" expanded="true" signature="7693:7994" ph="{&quot;method&quot;: &quot;POST&quot;...}" />
+              <marker date="1523365660000" expanded="true" signature="7729:7771" ph="[...]" />
+              <marker date="1523365660000" expanded="true" signature="7793:7889" ph="[...]" />
+              <marker date="1523365660000" expanded="true" signature="7914:7992" ph="{&quot;Content-Type&quot;: &quot;application/json&quot;...}" />
+              <marker date="1523365660000" expanded="true" signature="8072:8327" ph="{...}" />
+              <marker date="1523365660000" expanded="true" signature="8129:8158" ph="{...}" />
+              <marker date="1523365660000" expanded="true" signature="8191:8323" ph="{...}" />
+              <marker date="1523365660000" expanded="true" signature="8355:8428" ph="{...}" />
             </folding>
           </first_editor>
           <second_editor />
