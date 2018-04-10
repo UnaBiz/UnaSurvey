@@ -16,7 +16,7 @@ The counter has multiple values, depending on these 2 labels:
 
 ## Components
 
-`index.ts`: For testing, this scripts simulates a Sigfox message from a UnaBell. The
+`index.ts`: For testing, this script simulates a Sigfox message from a UnaBell. The
 message is sent to the Sigfox callback in thethings.io, which calls the `sigfox_parser`
 Cloud Function.
 
