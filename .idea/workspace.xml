@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0bfbdbb9-79be-439b-a32c-ecdd21e3bd76" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/README.md" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -36,8 +36,8 @@
       <file leaf-file-name="send_time_series.ts" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/send_time_series.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <state relative-caret-position="320">
+              <caret line="16" column="0" lean-forward="true" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
               <folding>
                 <element signature="n#!!doc" expanded="true" />
               </folding>
@@ -48,10 +48,29 @@
       <file leaf-file-name="README.md" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/README.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-            <state split_layout="FIRST">
-              <first_editor relative-caret-position="480">
-                <caret line="24" column="0" lean-forward="true" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
-                <folding />
+            <state split_layout="SPLIT">
+              <first_editor relative-caret-position="80">
+                <caret line="4" column="0" lean-forward="true" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
+                <folding>
+                  <marker date="1523330179000" expanded="true" signature="4025:4284" ph="{&quot;host&quot;: 'us-central1-&lt;&lt;YOUR_GOOGLE_PROJECT_ID&gt;&gt;.cloudfunctions.net'...}" />
+                  <marker date="1523330179000" expanded="true" signature="4237:4280" ph="{&quot;Content-Type&quot;: 'text/plain'...}" />
+                  <marker date="1523330179000" expanded="true" signature="4423:5243" ph="{...}" />
+                  <marker date="1523330179000" expanded="true" signature="4584:4790" ph="{&quot;method&quot;: &quot;POST&quot;...}" />
+                  <marker date="1523330179000" expanded="true" signature="4716:4788" ph="{&quot;Content-Type&quot;: &quot;text/plain&quot;...}" />
+                  <marker date="1523330179000" expanded="true" signature="4868:5104" ph="{...}" />
+                  <marker date="1523330179000" expanded="true" signature="4925:4954" ph="{...}" />
+                  <marker date="1523330179000" expanded="true" signature="4987:5100" ph="{...}" />
+                  <marker date="1523330179000" expanded="true" signature="5132:5190" ph="{...}" />
+                  <marker date="1523330179000" expanded="true" signature="6183:7112" ph="{...}" />
+                  <marker date="1523330179000" expanded="true" signature="6307:6608" ph="{&quot;method&quot;: &quot;POST&quot;...}" />
+                  <marker date="1523330179000" expanded="true" signature="6343:6385" ph="[...]" />
+                  <marker date="1523330179000" expanded="true" signature="6407:6503" ph="[...]" />
+                  <marker date="1523330179000" expanded="true" signature="6528:6606" ph="{&quot;Content-Type&quot;: &quot;application/json&quot;...}" />
+                  <marker date="1523330179000" expanded="true" signature="6686:6941" ph="{...}" />
+                  <marker date="1523330179000" expanded="true" signature="6743:6772" ph="{...}" />
+                  <marker date="1523330179000" expanded="true" signature="6805:6937" ph="{...}" />
+                  <marker date="1523330179000" expanded="true" signature="6969:7042" ph="{...}" />
+                </folding>
               </first_editor>
               <second_editor />
             </state>
@@ -149,8 +168,8 @@
   </component>
   <component name="ProjectFrameBounds">
     <option name="x" value="-410" />
-    <option name="y" value="-1350" />
-    <option name="width" value="1467" />
+    <option name="y" value="-1351" />
+    <option name="width" value="2369" />
     <option name="height" value="1275" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
@@ -373,7 +392,7 @@
       <workItem from="1522631084472" duration="10123000" />
       <workItem from="1522717719001" duration="7429000" />
       <workItem from="1523006174446" duration="5158000" />
-      <workItem from="1523044849660" duration="17530000" />
+      <workItem from="1523044849660" duration="20526000" />
     </task>
     <task id="LOCAL-00001" summary="First version">
       <created>1522222114649</created>
@@ -641,18 +660,25 @@
       <option name="project" value="LOCAL" />
       <updated>1523325934531</updated>
     </task>
-    <option name="localTasksCounter" value="39" />
+    <task id="LOCAL-00039" summary="Added readme">
+      <created>1523327249144</created>
+      <option name="number" value="00039" />
+      <option name="presentableId" value="LOCAL-00039" />
+      <option name="project" value="LOCAL" />
+      <updated>1523327249145</updated>
+    </task>
+    <option name="localTasksCounter" value="40" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="60176000" />
+    <option name="totallyTimeSpent" value="63172000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-410" y="-1350" width="1467" height="1275" extended-state="0" />
+    <frame x="-410" y="-1351" width="2369" height="1275" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="TypeScript" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.30227596" sideWeight="0.5" order="19" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2140351" sideWeight="0.64705884" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.13107005" sideWeight="0.64705884" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32843894" sideWeight="0.58600736" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Regex Tester" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="15" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.23497267" sideWeight="0.5018125" order="0" side_tool="true" content_ui="tabs" />
@@ -711,7 +737,6 @@
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
-    <MESSAGE value="First version" />
     <MESSAGE value="Data sent successfully" />
     <MESSAGE value="Adding 4 UnaBells to thethings.io" />
     <MESSAGE value="Send data for 4 UnaBells to thethings.io" />
@@ -736,7 +761,8 @@
     <MESSAGE value="Send counter to Prometheus" />
     <MESSAGE value="Counter sent to Prometheus OK" />
     <MESSAGE value="Renamed metric as button_presses_total" />
-    <option name="LAST_COMMIT_MESSAGE" value="Renamed metric as button_presses_total" />
+    <MESSAGE value="Added readme" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added readme" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1129,16 +1155,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/send_time_series.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/unabell_4d9a51.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="60">
@@ -1147,12 +1163,41 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/send_time_series.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="320">
+          <caret line="16" column="0" lean-forward="true" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="FIRST">
-          <first_editor relative-caret-position="480">
-            <caret line="24" column="0" lean-forward="true" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
-            <folding />
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="80">
+            <caret line="4" column="0" lean-forward="true" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
+            <folding>
+              <marker date="1523330179000" expanded="true" signature="4025:4284" ph="{&quot;host&quot;: 'us-central1-&lt;&lt;YOUR_GOOGLE_PROJECT_ID&gt;&gt;.cloudfunctions.net'...}" />
+              <marker date="1523330179000" expanded="true" signature="4237:4280" ph="{&quot;Content-Type&quot;: 'text/plain'...}" />
+              <marker date="1523330179000" expanded="true" signature="4423:5243" ph="{...}" />
+              <marker date="1523330179000" expanded="true" signature="4584:4790" ph="{&quot;method&quot;: &quot;POST&quot;...}" />
+              <marker date="1523330179000" expanded="true" signature="4716:4788" ph="{&quot;Content-Type&quot;: &quot;text/plain&quot;...}" />
+              <marker date="1523330179000" expanded="true" signature="4868:5104" ph="{...}" />
+              <marker date="1523330179000" expanded="true" signature="4925:4954" ph="{...}" />
+              <marker date="1523330179000" expanded="true" signature="4987:5100" ph="{...}" />
+              <marker date="1523330179000" expanded="true" signature="5132:5190" ph="{...}" />
+              <marker date="1523330179000" expanded="true" signature="6183:7112" ph="{...}" />
+              <marker date="1523330179000" expanded="true" signature="6307:6608" ph="{&quot;method&quot;: &quot;POST&quot;...}" />
+              <marker date="1523330179000" expanded="true" signature="6343:6385" ph="[...]" />
+              <marker date="1523330179000" expanded="true" signature="6407:6503" ph="[...]" />
+              <marker date="1523330179000" expanded="true" signature="6528:6606" ph="{&quot;Content-Type&quot;: &quot;application/json&quot;...}" />
+              <marker date="1523330179000" expanded="true" signature="6686:6941" ph="{...}" />
+              <marker date="1523330179000" expanded="true" signature="6743:6772" ph="{...}" />
+              <marker date="1523330179000" expanded="true" signature="6805:6937" ph="{...}" />
+              <marker date="1523330179000" expanded="true" signature="6969:7042" ph="{...}" />
+            </folding>
           </first_editor>
           <second_editor />
         </state>
