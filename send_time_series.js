@@ -4,12 +4,12 @@
 var exports = {}; //  Needed for ES support.
 function sendCounter(label, count, callback) {
     //  Send label and counter value to Prometheus Push Gateway via HTTP POST.
-    const job = 'job1';
+    const job = 'job2';
     const instance = label;
-    const counter = 'button_pressed';
+    const counter = 'button_presses_total';
     const body = [
         `# TYPE ${counter} counter`,
-        `# HELP ${counter} Cumulative number of button presses by label: excellent, goodjob, fair, poor`,
+        `# HELP ${counter} Cumulative number of button presses by instance: excellent, goodjob, fair, poor`,
         '',
         `${counter} ${count}`,
     ].join('\n') + '\n';
