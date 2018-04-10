@@ -162,7 +162,7 @@ Proof-of-concept Cloud Function that receives the WiFi MAC Address and WiFi RSSI
 through a Sigfox callback, and saves the data into the thing state.  This is triggered by a
 Sigfox tracking device that sends the WiFi data in real time.  
 
-The Cloud Function calls `geolocate_wifi.js` to perform geolocation based on the lasted two
+The Cloud Function calls `geolocate_wifi.js` to perform geolocation based on the last two
 saved WiFi access points.  The WiFi data is extracted from the Sigfox message by `sigfox_parser`.
 
 #### `geolocate_wifi.js`

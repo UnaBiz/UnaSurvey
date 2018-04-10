@@ -49,27 +49,27 @@
         <entry file="file://$PROJECT_DIR$/README.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
-              <first_editor relative-caret-position="709">
-                <caret line="76" column="0" lean-forward="true" selection-start-line="76" selection-start-column="0" selection-end-line="76" selection-end-column="0" />
+              <first_editor relative-caret-position="811">
+                <caret line="163" column="0" lean-forward="true" selection-start-line="163" selection-start-column="0" selection-end-line="163" selection-end-column="0" />
                 <folding>
-                  <marker date="1523331873000" expanded="true" signature="4032:4291" ph="{&quot;host&quot;: 'us-central1-&lt;&lt;YOUR_GOOGLE_PROJECT_ID&gt;&gt;.cloudfunctions.net'...}" />
-                  <marker date="1523331873000" expanded="true" signature="4244:4287" ph="{&quot;Content-Type&quot;: 'text/plain'...}" />
-                  <marker date="1523331873000" expanded="true" signature="4430:5250" ph="{...}" />
-                  <marker date="1523331873000" expanded="true" signature="4591:4797" ph="{&quot;method&quot;: &quot;POST&quot;...}" />
-                  <marker date="1523331873000" expanded="true" signature="4723:4795" ph="{&quot;Content-Type&quot;: &quot;text/plain&quot;...}" />
-                  <marker date="1523331873000" expanded="true" signature="4875:5111" ph="{...}" />
-                  <marker date="1523331873000" expanded="true" signature="4932:4961" ph="{...}" />
-                  <marker date="1523331873000" expanded="true" signature="4994:5107" ph="{...}" />
-                  <marker date="1523331873000" expanded="true" signature="5139:5197" ph="{...}" />
-                  <marker date="1523331873000" expanded="true" signature="6190:7119" ph="{...}" />
-                  <marker date="1523331873000" expanded="true" signature="6314:6615" ph="{&quot;method&quot;: &quot;POST&quot;...}" />
-                  <marker date="1523331873000" expanded="true" signature="6350:6392" ph="[...]" />
-                  <marker date="1523331873000" expanded="true" signature="6414:6510" ph="[...]" />
-                  <marker date="1523331873000" expanded="true" signature="6535:6613" ph="{&quot;Content-Type&quot;: &quot;application/json&quot;...}" />
-                  <marker date="1523331873000" expanded="true" signature="6693:6948" ph="{...}" />
-                  <marker date="1523331873000" expanded="true" signature="6750:6779" ph="{...}" />
-                  <marker date="1523331873000" expanded="true" signature="6812:6944" ph="{...}" />
-                  <marker date="1523331873000" expanded="true" signature="6976:7049" ph="{...}" />
+                  <marker date="1523331988000" expanded="true" signature="4032:4291" ph="{&quot;host&quot;: 'us-central1-&lt;&lt;YOUR_GOOGLE_PROJECT_ID&gt;&gt;.cloudfunctions.net'...}" />
+                  <marker date="1523331988000" expanded="true" signature="4244:4287" ph="{&quot;Content-Type&quot;: 'text/plain'...}" />
+                  <marker date="1523331988000" expanded="true" signature="4430:5250" ph="{...}" />
+                  <marker date="1523331988000" expanded="true" signature="4591:4797" ph="{&quot;method&quot;: &quot;POST&quot;...}" />
+                  <marker date="1523331988000" expanded="true" signature="4723:4795" ph="{&quot;Content-Type&quot;: &quot;text/plain&quot;...}" />
+                  <marker date="1523331988000" expanded="true" signature="4875:5111" ph="{...}" />
+                  <marker date="1523331988000" expanded="true" signature="4932:4961" ph="{...}" />
+                  <marker date="1523331988000" expanded="true" signature="4994:5107" ph="{...}" />
+                  <marker date="1523331988000" expanded="true" signature="5139:5197" ph="{...}" />
+                  <marker date="1523331988000" expanded="true" signature="6188:7117" ph="{...}" />
+                  <marker date="1523331988000" expanded="true" signature="6312:6613" ph="{&quot;method&quot;: &quot;POST&quot;...}" />
+                  <marker date="1523331988000" expanded="true" signature="6348:6390" ph="[...]" />
+                  <marker date="1523331988000" expanded="true" signature="6412:6508" ph="[...]" />
+                  <marker date="1523331988000" expanded="true" signature="6533:6611" ph="{&quot;Content-Type&quot;: &quot;application/json&quot;...}" />
+                  <marker date="1523331988000" expanded="true" signature="6691:6946" ph="{...}" />
+                  <marker date="1523331988000" expanded="true" signature="6748:6777" ph="{...}" />
+                  <marker date="1523331988000" expanded="true" signature="6810:6942" ph="{...}" />
+                  <marker date="1523331988000" expanded="true" signature="6974:7047" ph="{...}" />
                 </folding>
               </first_editor>
               <second_editor />
@@ -392,7 +392,7 @@
       <workItem from="1522631084472" duration="10123000" />
       <workItem from="1522717719001" duration="7429000" />
       <workItem from="1523006174446" duration="5158000" />
-      <workItem from="1523044849660" duration="21078000" />
+      <workItem from="1523044849660" duration="21226000" />
     </task>
     <task id="LOCAL-00001" summary="First version">
       <created>1522222114649</created>
@@ -674,11 +674,18 @@
       <option name="project" value="LOCAL" />
       <updated>1523330246265</updated>
     </task>
-    <option name="localTasksCounter" value="41" />
+    <task id="LOCAL-00041" summary="Updated readme">
+      <created>1523331888859</created>
+      <option name="number" value="00041" />
+      <option name="presentableId" value="LOCAL-00041" />
+      <option name="project" value="LOCAL" />
+      <updated>1523331888859</updated>
+    </task>
+    <option name="localTasksCounter" value="42" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="63724000" />
+    <option name="totallyTimeSpent" value="63872000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-410" y="-1351" width="2369" height="1275" extended-state="0" />
@@ -744,7 +751,6 @@
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
-    <MESSAGE value="Data sent successfully" />
     <MESSAGE value="Adding 4 UnaBells to thethings.io" />
     <MESSAGE value="Send data for 4 UnaBells to thethings.io" />
     <MESSAGE value="Send data for 4 UnaBells to thethings.io OK" />
@@ -769,7 +775,8 @@
     <MESSAGE value="Counter sent to Prometheus OK" />
     <MESSAGE value="Renamed metric as button_presses_total" />
     <MESSAGE value="Added readme" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added readme" />
+    <MESSAGE value="Updated readme" />
+    <option name="LAST_COMMIT_MESSAGE" value="Updated readme" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1183,27 +1190,27 @@
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
-          <first_editor relative-caret-position="709">
-            <caret line="76" column="0" lean-forward="true" selection-start-line="76" selection-start-column="0" selection-end-line="76" selection-end-column="0" />
+          <first_editor relative-caret-position="811">
+            <caret line="163" column="0" lean-forward="true" selection-start-line="163" selection-start-column="0" selection-end-line="163" selection-end-column="0" />
             <folding>
-              <marker date="1523331873000" expanded="true" signature="4032:4291" ph="{&quot;host&quot;: 'us-central1-&lt;&lt;YOUR_GOOGLE_PROJECT_ID&gt;&gt;.cloudfunctions.net'...}" />
-              <marker date="1523331873000" expanded="true" signature="4244:4287" ph="{&quot;Content-Type&quot;: 'text/plain'...}" />
-              <marker date="1523331873000" expanded="true" signature="4430:5250" ph="{...}" />
-              <marker date="1523331873000" expanded="true" signature="4591:4797" ph="{&quot;method&quot;: &quot;POST&quot;...}" />
-              <marker date="1523331873000" expanded="true" signature="4723:4795" ph="{&quot;Content-Type&quot;: &quot;text/plain&quot;...}" />
-              <marker date="1523331873000" expanded="true" signature="4875:5111" ph="{...}" />
-              <marker date="1523331873000" expanded="true" signature="4932:4961" ph="{...}" />
-              <marker date="1523331873000" expanded="true" signature="4994:5107" ph="{...}" />
-              <marker date="1523331873000" expanded="true" signature="5139:5197" ph="{...}" />
-              <marker date="1523331873000" expanded="true" signature="6190:7119" ph="{...}" />
-              <marker date="1523331873000" expanded="true" signature="6314:6615" ph="{&quot;method&quot;: &quot;POST&quot;...}" />
-              <marker date="1523331873000" expanded="true" signature="6350:6392" ph="[...]" />
-              <marker date="1523331873000" expanded="true" signature="6414:6510" ph="[...]" />
-              <marker date="1523331873000" expanded="true" signature="6535:6613" ph="{&quot;Content-Type&quot;: &quot;application/json&quot;...}" />
-              <marker date="1523331873000" expanded="true" signature="6693:6948" ph="{...}" />
-              <marker date="1523331873000" expanded="true" signature="6750:6779" ph="{...}" />
-              <marker date="1523331873000" expanded="true" signature="6812:6944" ph="{...}" />
-              <marker date="1523331873000" expanded="true" signature="6976:7049" ph="{...}" />
+              <marker date="1523331988000" expanded="true" signature="4032:4291" ph="{&quot;host&quot;: 'us-central1-&lt;&lt;YOUR_GOOGLE_PROJECT_ID&gt;&gt;.cloudfunctions.net'...}" />
+              <marker date="1523331988000" expanded="true" signature="4244:4287" ph="{&quot;Content-Type&quot;: 'text/plain'...}" />
+              <marker date="1523331988000" expanded="true" signature="4430:5250" ph="{...}" />
+              <marker date="1523331988000" expanded="true" signature="4591:4797" ph="{&quot;method&quot;: &quot;POST&quot;...}" />
+              <marker date="1523331988000" expanded="true" signature="4723:4795" ph="{&quot;Content-Type&quot;: &quot;text/plain&quot;...}" />
+              <marker date="1523331988000" expanded="true" signature="4875:5111" ph="{...}" />
+              <marker date="1523331988000" expanded="true" signature="4932:4961" ph="{...}" />
+              <marker date="1523331988000" expanded="true" signature="4994:5107" ph="{...}" />
+              <marker date="1523331988000" expanded="true" signature="5139:5197" ph="{...}" />
+              <marker date="1523331988000" expanded="true" signature="6188:7117" ph="{...}" />
+              <marker date="1523331988000" expanded="true" signature="6312:6613" ph="{&quot;method&quot;: &quot;POST&quot;...}" />
+              <marker date="1523331988000" expanded="true" signature="6348:6390" ph="[...]" />
+              <marker date="1523331988000" expanded="true" signature="6412:6508" ph="[...]" />
+              <marker date="1523331988000" expanded="true" signature="6533:6611" ph="{&quot;Content-Type&quot;: &quot;application/json&quot;...}" />
+              <marker date="1523331988000" expanded="true" signature="6691:6946" ph="{...}" />
+              <marker date="1523331988000" expanded="true" signature="6748:6777" ph="{...}" />
+              <marker date="1523331988000" expanded="true" signature="6810:6942" ph="{...}" />
+              <marker date="1523331988000" expanded="true" signature="6974:7047" ph="{...}" />
             </folding>
           </first_editor>
           <second_editor />
