@@ -16,9 +16,13 @@ The counter has multiple values, depending on these 2 labels:
 
 ## Components
 
+`index.ts`: For testing, this scripts simulates a Sigfox message from a UnaBell. The
+message is sent to the Sigfox callback in thethings.io, which calls the `sigfox_parser`
+Cloud Function.
+
 `sigfox_parser`: Parses callback messages triggered by Sigfox backend or UnaBell Connector when the UnaBell
-is pressed.  We extract the label (inserted by UnaBell Connected) and add it as an event parameter.  
-`process_tracker_message` is called to process the message.
+is pressed.  We extract the label (inserted by UnaBell Connected) and add it as an event 
+parameter. `process_tracker_message` is called to process the message.
 
 `process_tracker_message`: Trigger Function that is called upon receiving a UnaBell message.  We pass the message
 to `save_time_series` to save the button press event.  We don't wait for `save_time_series` to complete,

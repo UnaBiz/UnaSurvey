@@ -1,3 +1,5 @@
+//  This demo script simulates a Sigfox message from a UnaBell installed in a feedback survey panel.
+//  The message will be sent to thethings.io Sigfox callback, which will update the dashboard.
 //  We will have 4 UnaBells placed side by side to provide 4 buttons for survey:
 //  4D9A51: Excellent
 //  4DA240: Good Job
@@ -46,17 +48,6 @@ function composeRequest(msg0: SigfoxMessage): SigfoxMessage {
   if (!msg.snr) msg.snr = 0;
   if (!msg.data) msg.data = '00';
   return msg;
-  /*
-  `
-# TYPE button_pressed counter
-# HELP button_pressed Cumulative number of button presses by label: excellent, goodjob, fair, poor
-
-button_pressed{label="excellent"} 10
-button_pressed{label="goodjob"} 24
-button_pressed{label="fair"} 39
-button_pressed{label="poor"} 5
-`;
-*/
 }
 
 export function sendStatus(unabellID0: string, msg: SigfoxMessage): Promise<any> {
@@ -71,17 +62,6 @@ export function sendStatus(unabellID0: string, msg: SigfoxMessage): Promise<any>
     label = allUnaBells[unabellID];
   }
   if (!label) return Promise.resolve('unknown_id');
-  /*
-  //  Status object to be sent.
-  const obj = {
-    values: [
-      {key: 'button_pressed', value: label,
-        geo: { lat: 1, long: 104 }},
-      {key: 'presses', value: 1},
-      {key: label, value: 1},
-    ]
-  };
-  */
   //  Compose the thethings.io URL for sending the event.
   msg = composeRequest({ ...msg, label, device: unabellID });
   const url = config.callbackURL;
