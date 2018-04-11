@@ -26,6 +26,10 @@ number of button presses in the past 5 mins.  The computed metric is pushed back
 and stored in the thing states that correspond to the 4 devices in thethings.io.  The computed metric is then rendered
 in a thethings.io dashboard.
 
+This demonstration uses Prometheus to compute a simple time series metric. Prometheus supports sophisticated time-series queries 
+that have been used for monitoring highly complex computer networks in real time. Details on the advanced time series
+functions supported by Prometheus: https://prometheus.io/docs/prometheus/latest/querying/functions/ 
+
 [<kbd><img src="https://storage.googleapis.com/unabiz-media/unasurvey/dashboard.png" width="800"></kbd>](https://storage.googleapis.com/unabiz-media/unasurvey/dashboard.png)
 
 ## Components
