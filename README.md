@@ -35,12 +35,12 @@ parameter. `process_tracker_message` is called to process the message.
 to `save_time_series` to save the button press event.  We don't wait for `save_time_series` to complete,
 so `save_time_series` is not limited to the 2-second execution duration that `process_tracker_message` is bound by.
 
-`save_time_series`: Increments a variable named `count` in the thing state to keep track of the total number
-of button presses for that thing.  It calls `send_time_series`.
+`save_time_series`: Cloud Function that increments a variable named `count` in the thing state to keep track of the total number
+of button presses for that thing.  It calls `send_time_series` next.
 
 [<kbd><img src="https://storage.googleapis.com/unabiz-media/unasurvey/response-count.png" width="800"></kbd>](https://storage.googleapis.com/unabiz-media/unasurvey/response-count.png)
 
-`send_time_series`: Sends the total number of button presses to Prometheus.  Prometheus is designed to scrape
+`send_time_series`: Cloud Function that sends the total number of button presses to Prometheus.  Prometheus is designed to scrape
 an existing HTTP website for metrics, not for us to push metrics.  So we use Prometheus Push Gateway as a staging
 area to host our metrics.  Through the HTTP API, we push the total button presses to Prometheus Push Gateway as a metric
 `button_presses_total`, labelled by `job` and `instance`.  Our Prometheus server has been configured to scrape this metric
@@ -128,6 +128,9 @@ Prometheus Alert Manager: https://github.com/lupyuen-unabiz/alertmanager
 The following coniguration files were used:
 
 Prometheus Server - `prometheus.yml`:
+
+Here we configure the integration with the Alert Manager and the Push Gateway.
+
 ```yaml
 # Global config settings
 global:
@@ -163,6 +166,9 @@ scrape_configs:
 ```
 
 Prometheus Server - `rules.yml`:
+
+We compute the `button_presses_5m` metric using a rule.  The metric will be pushed as an alert to the Alert Manager.
+
 ```yaml
 # Compute the metrics for thethings.io.  Send the updates to thethings.io via alerts.
 groups:
@@ -179,6 +185,8 @@ groups:
 ```
 
 Prometheus Alert Manager - `alertmanager.yml`:
+
+The Alert Manager delivers the updated `button_presses_5m` metric via a HTTP POST webhook interface.
 
 ```yaml
 global:
@@ -213,7 +221,8 @@ receivers:
 
 Prometheus Push Gateway: 
 
-We use the default configuration for Push Gateway, since it's defined in the Prometheus configuration.
+We use the default configuration for Push Gateway, since it's defined in the Prometheus configuration.  The Push Gateway
+presents a HTTP POST interface for thethings.io to send the button press events to Prometheus.
 
 ## Other Components
 

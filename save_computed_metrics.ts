@@ -24,7 +24,7 @@ function writeThing(thingToken: string, values: {key: string, value: any}[]): Pr
       (error ? reject(error) : resolve(result)))
   )
     .then(result => {
-      console.log('*** writeThing', result);
+      // console.log('*** writeThing', result);
       return result;
     })
     .catch(error => {
@@ -36,7 +36,7 @@ function writeThing(thingToken: string, values: {key: string, value: any}[]): Pr
 function main(params, callback) {
   //  Request params contains a list of alerts, which contain the updated metrics computed by Prometheus.
   //  We save the computed metrics to the thing state.  The thing token is also provided in the params.
-  console.log(['*** save_computed_metrics start', new Date().toISOString(), JSON.stringify({ params }, null, 2)].join('-'.repeat(5)));
+  // console.log(['*** save_computed_metrics start', new Date().toISOString(), JSON.stringify({ params }, null, 2)].join('-'.repeat(5)));
   const thingToken = params.thingToken;
   const alerts = params.alerts;
   let allThings = null;
@@ -59,7 +59,7 @@ function main(params, callback) {
   ],
   "billType": "Yearly"  } */
   return getThings()
-    .then(res => { allThings = res })
+    .then(res => { allThings = res })  //  Save the fetched things
     .then(() => {
       const promises = [];  //  List of promises for updating the thing state.
       //  For each computed metric, update the thing with tag = instance
@@ -91,8 +91,9 @@ function main(params, callback) {
 
         //  Update the thing state with the metric.
         promises.push(writeThing(thing.thingToken, values));
-        console.log('*** alert', {instance, key, value});
+        // console.log('*** alert', {instance, key, value});
       });
+      //  Wait for all thing state updates to complete.
       return Promise.all(promises);
     })
     .then(result => {

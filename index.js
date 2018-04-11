@@ -85,11 +85,11 @@ function sendStatus(unabellID0, msg) {
     });
 }
 exports.sendStatus = sendStatus;
-//  For development: Send the test status randomly every 60 seconds.
+//  For development: Send the test status randomly every 30 seconds.
 if (process.env.NODE_ENV !== 'production') {
     let lastSeqNumber = 0;
     setInterval(() => {
         sendStatus('random', { seqNumber: lastSeqNumber++ });
-    }, 60 * 1000);
+    }, 30 * 1000);
 }
 //# sourceMappingURL=index.js.map
