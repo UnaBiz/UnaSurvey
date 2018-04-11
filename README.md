@@ -3,7 +3,10 @@
 ## UnaSurvey
 
 Demonstrates how the Prometheus time series server / database may be integrated with thethings.io via 
-thethings Cloud Functions and Trigger Functions.  More about Prometheus: https://prometheus.io/docs/introduction/overview/
+thethings Cloud Functions and Trigger Functions.  Rendering realtime sensor is not a problem with thethings.io 
+but computing historical metrics - like how many times a button has been pressed within a certain time period -
+is a lot harder.  We shall use a time series database, Prometheus, to store time series data and compute time series
+metrics. More about Prometheus: https://prometheus.io/docs/introduction/overview/
 
 Assumes that you are using 4 UnaBells (wireless push buttons) connected to thethings.io via the Sigfox IoT network.
 The 4 buttons make up a customer feedback survey panel, labelled as: Excellent, Good Job, Fair, Poor.  Each button shall be
