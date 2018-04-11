@@ -14,6 +14,13 @@ The counter has multiple values, depending on these 2 labels:
 
 `instance`: Label of the button, i.e. `excellent`, `goodjob`, `fair`, `poor`
 
+Prometheus shall use the time series data to compute a new metric named `button_presses_5m`, which is the incremental
+number of button presses in the past 5 mins.  The computed metric is pushed back into thethings.io via a Cloud Function
+and stored in the thing states that correspond to the 4 devices in thethings.io.  The computed metric is then rendered
+in a thethings.io dashboard.
+
+[<kbd><img src="https://storage.googleapis.com/unabiz-media/unasurvey/dashboard.png" width="800"></kbd>](https://storage.googleapis.com/unabiz-media/unasurvey/dashboard.png)
+
 ## Components
 
 `index.ts`: For testing, this script simulates a Sigfox message from a UnaBell. The
@@ -31,13 +38,25 @@ so `save_time_series` is not limited to the 2-second execution duration that `pr
 `save_time_series`: Increments a variable named `count` in the thing state to keep track of the total number
 of button presses for that thing.  It calls `send_time_series`.
 
+[<kbd><img src="https://storage.googleapis.com/unabiz-media/unasurvey/response-count.png" width="800"></kbd>](https://storage.googleapis.com/unabiz-media/unasurvey/response-count.png)
+
 `send_time_series`: Sends the total number of button presses to Prometheus.  Prometheus is designed to scrape
 an existing HTTP website for metrics, not for us to push metrics.  So we use Prometheus Push Gateway as a staging
 area to host our metrics.  Through the HTTP API, we push the total button presses to Prometheus Push Gateway as a metric
 `button_presses_total`, labelled by `job` and `instance`.  Our Prometheus server has been configured to scrape this metric
 at regular intervals from the Prometheus Push Gateway.
 
-TODO: Prometheus should compute the KPI metrics and push back to thethings.io via Prometheus Alert Manager.
+The Prometheus server has been configured to compute the differences in `button_presses_total` for the last 5 mins,
+which we name as `button_presses_5m`.  The Prometheus server generates an alert to send `button_presses_5m` to
+Prometheus Alert Manager, which delivers the updated `button_presses_5m` to thethings.io via `save_computed_metrics`
+
+`save_computed_metrics`: Cloud Function that is invoked via HTTP to save the `button_presses_5m` metric back into
+the respective thing states of the devices that triggered the updates, i.e. `excellent`, `goodjob`, `fair`, `poor`
+
+The `button_presses_5m` metric is then rendered in a thethings.io dashboard for the 4 devices.  This shows
+the changes in the button presses for each of the 4 buttons: `excellent`, `goodjob`, `fair`, `poor`
+
+[<kbd><img src="https://storage.googleapis.com/unabiz-media/unasurvey/response-count-5m.png" width="800"></kbd>](https://storage.googleapis.com/unabiz-media/unasurvey/response-count-5m.png)
 
 ## Prometheus Queries
 
@@ -93,9 +112,22 @@ Element	Value
 {instance="poor",job="job2"}	3
 ```
 
+[<kbd><img src="https://storage.googleapis.com/unabiz-media/unasurvey/prometheus.png" width="800"></kbd>](https://storage.googleapis.com/unabiz-media/unasurvey/prometheus.png)
+
 ## Prometheus Configuration
 
-`prometheus.yml`:
+For this proof-of-concept we run 3 Prometheus servers in Google Cloud AppEngine Go Flexible Environment 
+(which only allows HTTP port 8080 for incoming access):
+
+Prometheus Server: https://github.com/lupyuen-unabiz/prometheus 
+
+Prometheus Push Gateway: https://github.com/lupyuen-unabiz/pushgateway
+ 
+Prometheus Alert Manager: https://github.com/lupyuen-unabiz/alertmanager
+
+The following coniguration files were used:
+
+Prometheus Server - `prometheus.yml`:
 ```yaml
 # Global config settings
 global:
@@ -130,7 +162,7 @@ scrape_configs:
     - targets: ['YOUR_PROMETHEUS_PUSHGATEWAY:443']
 ```
 
-`rules.yml`:
+Prometheus Server - `rules.yml`:
 ```yaml
 # Compute the metrics for thethings.io.  Send the updates to thethings.io via alerts.
 groups:
@@ -146,7 +178,7 @@ groups:
       description: "{{ $value }}"
 ```
 
-Alert Manager Configuration - `alertmanager.yml`:
+Prometheus Alert Manager - `alertmanager.yml`:
 
 ```yaml
 global:
@@ -178,6 +210,10 @@ receivers:
   - send_resolved: true
     url: 'https://us-central1-YOUR_GOOGLE_PROJECT_ID.cloudfunctions.net/sendComputedMetrics'
 ```
+
+Prometheus Push Gateway: 
+
+We use the default configuration for Push Gateway, since it's defined in the Prometheus configuration.
 
 ## Other Components
 
@@ -247,6 +283,10 @@ req2.end();
 ```
 
 ### `send_computed_metrics`
+
+This Google Cloud Function is a wrapper for thethings.io Cloud Function save_computed_metrics.  Prometheus Push Gateway
+only supports one standard JSON POST format, which doesn't work with thethings.io.  So the Google Cloud Function was used
+to translate the JSON format.
 
 Google Cloud Function `send_computed_metrics`: 
 
