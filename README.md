@@ -246,6 +246,66 @@ req2.end();
 };
 ```
 
+### `send_computed_metrics`
+
+Google Cloud Function `send_computed_metrics`: 
+
+```javascript
+var https = require("https");
+
+exports.main = (req, res) => {
+  console.log('query:', req.query);
+  console.log('body:', JSON.stringify(req.body, null, 2));
+  
+  const thingToken = YOUR_THING_TOKEN;
+  req.body.thingToken = thingToken;
+  
+var options = {
+  "method": "POST",
+  "hostname": [
+    "api",
+    "thethings",
+    "io"
+  ].join('.'),
+  "path": [
+    "/v2",
+    "things",
+    thingToken,
+    "code",
+    "functions",
+    "save_computed_metrics"
+  ].join('/'),
+  "headers": {
+    "Content-Type": "application/json",
+    "Cache-Control": "no-cache",
+  }
+};
+console.log({ options });
+var req2 = https.request(options, function (res2) {
+  var chunks = [];
+
+  res2.on("data", function (chunk) {
+    chunks.push(chunk);
+  });
+
+  res2.on("end", function () {
+    var body = Buffer.concat(chunks);
+    console.log(body.toString());    
+    res.status(200).send('"OK"');
+  });
+});
+
+req2.on('error', (e) => {
+  console.error(e);
+  res.status(500).send('"Error"');
+});
+  
+req2.write(JSON.stringify({ params: req.body }));
+req2.end();
+  
+};
+```
+
 #### `save_wifi.js`
 
 Proof-of-concept Cloud Function that receives the WiFi MAC Address and WiFi RSSI Signal Strength
