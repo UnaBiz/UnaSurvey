@@ -20,8 +20,8 @@ The counter has multiple values, depending on these 2 labels:
 message is sent to the Sigfox callback in thethings.io, which calls the `sigfox_parser`
 Cloud Function.
 
-`sigfox_parser`: Parses callback messages triggered by Sigfox backend or UnaBell Connector when the UnaBell
-is pressed.  We extract the label (inserted by UnaBell Connected) and add it as an event 
+`sigfox_parser`: This Cloud Function parses callback messages triggered by Sigfox backend or UnaBell Connector when the UnaBell
+is pressed.  We extract the label (inserted by UnaBell Connector) and add it as an event 
 parameter. `process_tracker_message` is called to process the message.
 
 `process_tracker_message`: Trigger Function that is called upon receiving a UnaBell message.  We pass the message
@@ -107,7 +107,7 @@ global:
 rule_files:
   - rules.yml
 
-# Alertmanager sends alerts to thethings.io when the above rules are satisfied
+# Alertmanager sends updated metrics to thethings.io when the above rules are satisfied
 alerting:
   alertmanagers:
   - static_configs:
@@ -128,6 +128,55 @@ scrape_configs:
     honor_labels: true
     static_configs:
     - targets: ['YOUR_PROMETHEUS_PUSHGATEWAY:443']
+```
+
+`rules.yml`:
+```yaml
+# Compute the metrics for thethings.io.  Send the updates to thethings.io via alerts.
+groups:
+- name: metrics
+  rules:
+
+  # Compute number of button presses in the last 5 mins. When there is an update, send update to thethings.io as an alert
+  - alert: button_presses_5m
+    expr: button_presses_total - button_presses_total offset 5m >= 0
+    for: 1m
+    annotations:
+      summary: "{{ $labels.instance }}"
+      description: "{{ $value }}"
+```
+
+Alert Manager Configuration - `alertmanager.yml`:
+
+```yaml
+global:
+
+# Handle each incoming alert according to this processing route
+route:
+  # When a new group of alerts is created by an incoming alert, wait at
+  # least 'group_wait' to send the initial notification.
+  # This way ensures that you get multiple alerts for the same group that start
+  # firing shortly after another are batched together on the first 
+  # notification.
+  group_wait: 30s
+
+  # When the first notification was sent, wait 'group_interval' to send a batch
+  # of new alerts that started firing for that group.
+  group_interval: 1m
+
+  # If an alert has successfully been sent, wait 'repeat_interval' to
+  # resend them.
+  repeat_interval: 2m 
+
+  # By default, send all alerts / metrics to thethings.io receiver
+  receiver: thethings.io
+
+# Receivers are used to send alerts to external systems e.g. thethings.io
+receivers:
+- name: 'thethings.io'  # We use a webhook receiver to send the metric to thethings.io via HTTP POST
+  webhook_configs:
+  - send_resolved: true
+    url: 'https://us-central1-YOUR_GOOGLE_PROJECT_ID.cloudfunctions.net/sendComputedMetrics'
 ```
 
 ## Other Components
