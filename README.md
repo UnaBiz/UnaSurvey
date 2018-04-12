@@ -180,6 +180,22 @@ Prometheus Server - `rules.yml`:
 
 We compute the `button_presses_5m` metric using a rule.  The metric will be pushed as an alert to the Alert Manager.
 
+The computation of `button_presses_5m` is specified by this single line:
+
+```yaml
+expr: button_presses_total - button_presses_total offset 5m >= 0
+```
+
+`button_presses_total` represents a vector of 4 numbers, the total number of presses for each button.
+
+`button_presses_total offset 5m` is also a vector of 4 numbers, containing the total number of presses for each button 5 mins ago.
+
+`button_presses_total - button_presses_total offset 5m` computes the difference between the two vectors, producing another vector.
+
+`button_presses_total - button_presses_total offset 5m >= 0` is always true, hence Prometheus always computes the difference
+of the two vectors and transmits to the Alert Manager as an alert / metric `button_presses_5m`, a vector with 4 numbers
+
+
 ```yaml
 # Compute the metrics for thethings.io.  Send the updates to thethings.io via alerts.
 groups:
@@ -197,7 +213,8 @@ groups:
 
 Prometheus Alert Manager - `alertmanager.yml`:
 
-The Alert Manager delivers the updated `button_presses_5m` metric via a HTTP POST webhook interface.
+The Alert Manager delivers the updated `button_presses_5m` metric to thethings.io via a HTTP POST webhook interface. There
+are some settings here to throttle the rate of alerts, they should be tuned in a real system.
 
 ```yaml
 global:
